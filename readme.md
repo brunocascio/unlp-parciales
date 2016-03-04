@@ -22,6 +22,10 @@ Generamos una app key. (ésto es para encriptación)
 
 `php artisan key:generate`
 
+Ejecutamos las migraciones
+
+`php artisan migrate`
+
 Ejecutamos el servidor
 
 `php artisan serve`
