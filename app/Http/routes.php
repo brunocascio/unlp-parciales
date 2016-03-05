@@ -41,11 +41,12 @@ Route::group(['middleware' => ['web']], function () {
     |--------------------------------------------------------------------------
     |
     */
-    Route::group(['middleware' => 'role:admin'], function() {
-
-      Route::get('/admin', 'AdminController@index');
-
-    });
+    Route::group(
+      ['middleware' => 'role:admin', 'prefix' => 'admin'],
+      function() {
+        Route::get('/', ['as' => 'admin.dashboard', 'uses' => 'AdminController@index']);
+        // ...
+      });
 
     /*
     |--------------------------------------------------------------------------
