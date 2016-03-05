@@ -13,4 +13,8 @@ class UnxUser extends User
   public function is( $role ) {
     return $this->role && $this->role === $role;
   }
+
+  public function isAdmin() {
+    return $this->is('admin');
+  }
 }
