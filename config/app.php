@@ -156,6 +156,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         *  Plugins
+         */
+        browner12\helpers\HelperServiceProvider::class,
     ],
 
     /*
