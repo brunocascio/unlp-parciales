@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -27,5 +23,35 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+    /*
+    |--------------------------------------------------------------------------
+    | Auth Routes
+    |--------------------------------------------------------------------------
+    |
+    */
+    // Route::auth();
+    Route::get('login', 'Auth\AuthMinimalController@showLoginForm');
+    Route::post('login', 'Auth\AuthMinimalController@login');
+    Route::get('logout', 'Auth\AuthMinimalController@logout');
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admins Section
+    |--------------------------------------------------------------------------
+    |
+    */
+    Route::group(['middleware' => 'role:admin'], function() {
+
+      Route::get('/admin', 'AdminController@index');
+
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Guest Routes
+    |--------------------------------------------------------------------------
+    |
+    */
+    Route::get('/', 'HomeController@index');
 });
