@@ -15,16 +15,12 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
-    protected $guarded = [
-      'role'
-    ];
-
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'role'
+        'password', 'remember_token'
     ];
 }
