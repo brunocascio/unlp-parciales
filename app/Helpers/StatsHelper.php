@@ -15,3 +15,17 @@ if (!function_exists('totalUsers')) {
       return User::count();
     }
 }
+
+if (!function_exists('totalCareers')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function totalCareers()
+    {
+      return 1;
+    }
+}

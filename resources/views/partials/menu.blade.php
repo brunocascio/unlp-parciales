@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
 
@@ -12,7 +12,7 @@
 
       <!-- Branding Image -->
       <a class="navbar-brand" href="{{ url('/') }}">
-        Laravel
+        Un<strong>X</strong>Parciales
       </a>
     </div>
 
