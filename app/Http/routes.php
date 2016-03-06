@@ -46,6 +46,7 @@ Route::group(['middleware' => ['web']], function () {
       function() {
         Route::get('/', ['as' => 'admin.dashboard', 'uses' => 'AdminController@index']);
         Route::get('/users', ['as' => 'admin.users', 'uses' => 'AdminUserController@index']);
+        Route::get('/configs', ['as' => 'admin.configs', 'uses' => 'AdminConfigController@index']);
         // ...
       });
 

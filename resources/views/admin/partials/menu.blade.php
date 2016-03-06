@@ -59,4 +59,13 @@
       </ul>
     </div>
   </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a role="button" href="{{ route('admin.configs') }}">
+        <h4 class="panel-title">
+          Configuraciones
+        </h4>
+      </a>
+    </div>
+  </div>
 </nav>

@@ -12,7 +12,7 @@
 
       <!-- Branding Image -->
       <a class="navbar-brand" href="{{ url('/') }}">
-        Un<strong>X</strong>Parciales
+        {{ getSiteTitle() }}
       </a>
     </div>
 

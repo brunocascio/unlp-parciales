@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+use App\Config;
+
+class ConfigTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserTableSeeder::class);
-        $this->call(ConfigTableSeeder::class);
+      Config::create([
+        'key' => 'title',
+        'value' => 'UNLPParciales',
+      ]);
     }
 }
