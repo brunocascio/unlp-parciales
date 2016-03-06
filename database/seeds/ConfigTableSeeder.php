@@ -15,7 +15,7 @@ class ConfigTableSeeder extends Seeder
     {
       Config::create([
         'key' => 'title',
-        'value' => 'UNLPParciales',
+        'value' => 'UNXParciales',
       ]);
     }
 }
