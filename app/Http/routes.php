@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function () {
       ['middleware' => 'role:admin', 'prefix' => 'admin'],
       function() {
         Route::get('/', ['as' => 'admin.dashboard', 'uses' => 'AdminController@index']);
+        Route::get('/users', ['as' => 'admin.users', 'uses' => 'AdminUserController@index']);
         // ...
       });
 
