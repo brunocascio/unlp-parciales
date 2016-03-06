@@ -22,9 +22,9 @@ Generamos una app key. (ésto es para encriptación)
 
 `php artisan key:generate`
 
-Ejecutamos las migraciones
+Ejecutamos las migraciones y **los seeds**
 
-`php artisan migrate`
+`php artisan migrate:install && php artisan migrate --seed`
 
 Ejecutamos el servidor
 
