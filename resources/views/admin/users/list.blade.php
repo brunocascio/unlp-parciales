@@ -4,7 +4,7 @@
   <table class="table table-striped table-bordered table-condensed">
     <thead>
       <th>Name</th>
-      <th>email</th>
+      <th>Email</th>
       <th>Role</th>
       <th>Actions</th>
     </thead>

@@ -24,8 +24,13 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="menuHeadingUsuarios">
           <a class="" role="button" data-toggle="collapse" href="#menu-usuarios" aria-expanded="true" aria-controls="menu-usuarios">
-            <h4 class="panel-title">
-              Usuarios
+            <h4 class="panel-title clearfix">
+              <div class="pull-left">
+                Usuarios
+              </div>
+              <div class="pull-right">
+                <span class="badge">{{ totalUsers() }}</span>
+              </div>
             </h4>
           </a>
         </div>
