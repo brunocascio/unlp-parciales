@@ -1,9 +1,42 @@
 body {
   padding-top: 75px;
+  background: #f2f2f2;
 }
 
 .table th, .table td {
   vertical-align: middle !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
+}
+
+.natural-language-container {
+  min-height: 500px;
+}
+
+.natural-language-container > .section > .text,
+.natural-language-container > .section > .select {
+  display: inline-block;
+}
+
+.natural-language-container > .section > .text {
+  font-size: 9rem;
+  width: 30%;
+}
+
+.natural-language-container > .section > .select {
+  width: 60%;
+}
+
+.natural-language-container .bootstrap-select {
+  vertical-align: sub;
+  width: 100% !important;
+}
+
+.natural-language-container .bootstrap-select .dropdown-toggle .filter-option {
+  font-size: 4rem;
+  overflow: visible !important;
+}
+
+.natural-language-container .bootstrap-select>.dropdown-toggle {
+  height: 7rem;
 }

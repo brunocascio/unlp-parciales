@@ -1,6 +1,7 @@
 <?php
 
 use App\UnxUser as User;
+use App\Career;
 
 if (!function_exists('totalUsers')) {
 
@@ -26,6 +27,6 @@ if (!function_exists('totalCareers')) {
      */
     function totalCareers()
     {
-      return 1;
+      return Career::count();
     }
 }
