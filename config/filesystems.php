@@ -62,6 +62,12 @@ return [
             'bucket' => 'your-bucket',
         ],
 
+        'dropbox' => [
+          'driver' => 'dropbox',
+          'clientIdentifier' => env('DROPBOX_CLIENT_ID', 'your-api-key'),
+          'accessToken' => env('DROPBOX_ACCESS_TOKEN', 'your-access-token'),
+        ]
+
     ],
 
 ];
