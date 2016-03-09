@@ -22,7 +22,7 @@
               <button type="button" class="btn btn-sm btn-primary">
                 <i class="glyphicon glyphicon-pencil"></i>
               </button>
-              <button type="button" class="btn btn-sm btn-danger">
+              <button type="button" class="btn btn-sm btn-danger delete">
                 <i class="glyphicon glyphicon-trash"></i>
               </button>
             </div>

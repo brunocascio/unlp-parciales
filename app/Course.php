@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Career extends Model implements SluggableInterface
+class Course extends Model implements SluggableInterface
 {
     use SluggableTrait;
 
@@ -14,13 +14,7 @@ class Career extends Model implements SluggableInterface
     protected $fillable = [ 'name' ];
     protected $sluggable = [ 'build_from' => 'name', 'save_to'    => 'slug' ];
 
-    public static function getRules($id = '') {
-      return [
-        'name' => "required|unique:careers,name,{$id}|min:4|max:100"
-      ];
-    }
-
-    public function courses() {
-      return $this->belongsToMany('App\Course', 'careers_courses');
+    public function careers() {
+      return $this->belongsToMany('App\Career', 'careers_courses');
     }
 }

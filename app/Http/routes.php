@@ -49,6 +49,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/users', ['as' => 'admin.users', 'uses' => 'AdminUserController@index']);
         Route::get('/configs', ['as' => 'admin.configs', 'uses' => 'AdminConfigController@index']);
         Route::resource('careers', 'AdminCareerController', ['except' => 'show']);
+        Route::resource('courses', 'AdminCourseController', ['except' => 'show']);
       });
     });
 

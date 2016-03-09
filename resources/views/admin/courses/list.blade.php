@@ -7,17 +7,17 @@
       <th>Actions</th>
     </thead>
     <tbody>
-      @foreach ($careers as $career)
+      @foreach ($courses as $course)
         <tr>
-          <td>{{ $career->name }}</td>
+          <td>{{ $course->name }}</td>
           <td>
             <div class="pull-left">
-              <a role="button" class="btn btn-sm btn-primary" href="{{ route('admin.careers.edit', [$career->id])}}">
+              <a role="button" class="btn btn-sm btn-primary" href="{{ route('admin.courses.edit', [$course->id])}}">
                 <i class="glyphicon glyphicon-pencil"></i>
               </a>
             </div>
             <div class="pull-left">
-              <form class="form-inline" action="{{ route('admin.careers.destroy', [$career->id]) }}" method="POST">
+              <form class="form-inline" action="{{ route('admin.courses.destroy', [$course->id]) }}" method="POST">
                 {!! csrf_field() !!}
                 <input type="hidden" name="_method" value="DELETE">
                 <button type="submit" class="btn btn-sm btn-danger delete">
