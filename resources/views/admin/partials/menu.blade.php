@@ -11,7 +11,30 @@
       <ul class="list-group">
         <li class="list-group-item">All</li>
         <li class="list-group-item">New</li>
-        <li class="list-group-item">Categories</li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="menuHeadingTypes">
+      <a class="" role="button" data-toggle="collapse" href="#menu-types" aria-expanded="true" aria-controls="menu-types">
+        <h4 class="panel-title clearfix">
+          <div class="pull-left">
+            Types
+          </div>
+          <div class="pull-right">
+            <span class="badge">{{ totalTypes() }}</span>
+          </div>
+        </h4>
+      </a>
+    </div>
+    <div id="menu-types" class="panel-collapse {{ !Route::is('admin.types.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingTypes" aria-expanded="true">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="{{ route('admin.types.index') }}">All</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{{ route('admin.types.create') }}">New</a>
+        </li>
       </ul>
     </div>
   </div>
