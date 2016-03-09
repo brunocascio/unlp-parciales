@@ -7,7 +7,7 @@
         </h4>
       </a>
     </div>
-    <div id="menu-tests" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menuHeadingTests" aria-expanded="true">
+    <div id="menu-tests" class="panel-collapse {{ !Route::is('admin.tests.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingTests" aria-expanded="true">
       <ul class="list-group">
         <li class="list-group-item">All</li>
         <li class="list-group-item">New</li>
@@ -28,10 +28,10 @@
         </h4>
       </a>
     </div>
-    <div id="menu-users" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menuHeadingUsers" aria-expanded="true">
+    <div id="menu-users" class="panel-collapse {{ !Route::is('admin.users.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingUsers" aria-expanded="true">
       <ul class="list-group">
         <li class="list-group-item">
-          <a href="{{ route('admin.users') }}">All</a>
+          <a href="{{ route('admin.users.index') }}">All</a>
         </li>
         <li class="list-group-item">New</li>
       </ul>
@@ -50,7 +50,7 @@
         </h4>
       </a>
     </div>
-    <div id="menu-careers" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menuHeadingCareers" aria-expanded="true">
+    <div id="menu-careers" class="panel-collapse {{ !Route::is('admin.careers.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingCareers" aria-expanded="true">
       <ul class="list-group">
         <li class="list-group-item">
           <a href="{{ route('admin.careers.index') }}">All</a>
@@ -74,7 +74,7 @@
         </h4>
       </a>
     </div>
-    <div id="menu-courses" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menuHeadingCourses" aria-expanded="true">
+    <div id="menu-courses" class="panel-collapse {{ !Route::is('admin.courses.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingCourses" aria-expanded="true">
       <ul class="list-group">
         <li class="list-group-item">
           <a href="{{ route('admin.courses.index') }}">All</a>
