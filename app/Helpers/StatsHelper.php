@@ -3,6 +3,7 @@
 use App\UnxUser as User;
 use App\Career;
 use App\Course;
+use App\Teacher;
 
 if (!function_exists('totalUsers')) {
 
@@ -43,5 +44,19 @@ if (!function_exists('totalCourses')) {
     function totalCourses()
     {
       return Course::count();
+    }
+}
+
+if (!function_exists('totalTeachers')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function totalTeachers()
+    {
+      return Teacher::count();
     }
 }

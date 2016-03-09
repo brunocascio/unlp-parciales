@@ -50,6 +50,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::resource('users', 'AdminUserController', ['only' => 'index']);
         Route::resource('careers', 'AdminCareerController', ['except' => 'show']);
         Route::resource('courses', 'AdminCourseController', ['except' => 'show']);
+        Route::resource('teachers', 'AdminTeacherController', ['except' => 'show']);
       });
     });
 

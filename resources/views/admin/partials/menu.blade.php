@@ -86,6 +86,30 @@
     </div>
   </div>
   <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="menuHeadingTeachers">
+      <a class="" role="button" data-toggle="collapse" href="#menu-teachers" aria-expanded="true" aria-controls="menu-teachers">
+        <h4 class="panel-title clearfix">
+          <div class="pull-left">
+            Teachers
+          </div>
+          <div class="pull-right">
+            <span class="badge">{{ totalTeachers() }}</span>
+          </div>
+        </h4>
+      </a>
+    </div>
+    <div id="menu-teachers" class="panel-collapse {{ !Route::is('admin.teachers.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingTeachers" aria-expanded="true">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="{{ route('admin.teachers.index') }}">All</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{{ route('admin.teachers.create') }}">New</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-default">
     <div class="panel-heading">
       <a role="button" href="{{ route('admin.configs') }}">
         <h4 class="panel-title">
