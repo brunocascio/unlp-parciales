@@ -11,6 +11,27 @@
 |
 */
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Api Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the "api" middleware group to every route
+| it contains.
+|
+*/
+Route::group(['middleware' => ['api']], function () {
+
+  Route::group(['prefix' => 'api'], function()
+  {
+    Route::get('/careers/{slug}/courses', 'Api\CourseController@coursesOfCarrer');
+
+    Route::get('/careers/{slug}/courses/{course_slug}/types', 'Api\TypeController@typesOfCourse');
+  });
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -21,7 +42,6 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
 Route::group(['middleware' => ['web']], function () {
 
     /*
