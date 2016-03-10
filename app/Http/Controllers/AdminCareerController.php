@@ -15,7 +15,7 @@ class AdminCareerController extends AdminController
      */
     public function index()
     {
-        return view('admin.careers.list', [ 'careers' => Career::all() ]);
+        return view('admin.careers.index', [ 'careers' => Career::all() ]);
     }
 
     /**
