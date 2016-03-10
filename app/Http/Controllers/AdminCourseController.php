@@ -15,7 +15,7 @@ class AdminCourseController extends AdminController
   */
   public function index()
   {
-    return view('admin.courses.list', [ 'courses' => Course::all() ]);
+    return view('admin.courses.index', [ 'courses' => Course::all() ]);
   }
 
   /**

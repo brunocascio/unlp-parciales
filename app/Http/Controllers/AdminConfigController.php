@@ -10,6 +10,6 @@ class AdminConfigController extends AdminController
 {
     public function index()
     {
-      return view('admin.configs.list', [ 'configs' => Config::all() ]);
+      return view('admin.configs.index', [ 'configs' => Config::all() ]);
     }
 }

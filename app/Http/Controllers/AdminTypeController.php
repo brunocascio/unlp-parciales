@@ -17,7 +17,7 @@ class AdminTypeController extends Controller
      */
     public function index()
     {
-        return view('admin.types.list', [ 'types' => Type::all() ]);
+        return view('admin.types.index', [ 'types' => Type::all() ]);
     }
 
     /**

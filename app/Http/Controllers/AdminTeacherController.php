@@ -17,7 +17,7 @@ class AdminTeacherController extends Controller
      */
     public function index()
     {
-        return view('admin.teachers.list', [ 'teachers' => Teacher::all() ]);
+        return view('admin.teachers.index', [ 'teachers' => Teacher::all() ]);
     }
 
     /**
