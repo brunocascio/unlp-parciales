@@ -11,7 +11,11 @@ class Career extends Model implements SluggableInterface
     use SluggableTrait;
 
     public $timestamps = false;
+
     protected $fillable = [ 'name' ];
+
+    protected $hidden = ['pivot'];
+
     protected $sluggable = [ 'build_from' => 'name', 'save_to'    => 'slug' ];
 
     public static function getRules($id = '') {
