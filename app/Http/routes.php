@@ -91,7 +91,7 @@ Route::group(['middleware' => ['web']], function () {
     |--------------------------------------------------------------------------
     |
     */
-    Route::get('/', 'HomeController@index');
+    Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
     Route::get('/courses/{course}/resources/{type?}', 'CourseResourceController@index');
 
