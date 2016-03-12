@@ -5,6 +5,10 @@ jQuery(function($){
   var $selectType = $('#type-select');
   var $search = $('#search');
 
+  /*
+  * Global Functions
+  *
+  */
   window.clearSelectOptions = function($el) {
     $el.find('option:not(:first-child)').remove();
   }
@@ -26,11 +30,6 @@ jQuery(function($){
       );
     });
   }
-
-  $('.delete').click(function(e){
-    var r = confirm("Desea borrar el recurso?");
-    return r;
-  });
 
   /*
   * Career Select Changes
@@ -96,6 +95,28 @@ jQuery(function($){
       var type_slug = $selectType.val();
       location.href = '/courses/' + course_slug + '/resources/' + type_slug;
     }
-  })
+  });
+
+  /*
+  * Helpers
+  *
+  */
+  $('.delete').click(function(e){
+    var r = confirm("Desea borrar el recurso?");
+    return r;
+  });
+
+  $('[data-href]').click(function(e){
+    location.href = $(this).data('href');
+  });
+
+  /*
+  * Initializers
+  *
+  */
+  $(".file-upload").fileinput({
+    'showUpload':false,
+    'previewFileType': 'any'
+  });
 
 });

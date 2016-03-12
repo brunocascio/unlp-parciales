@@ -34,7 +34,7 @@ Route::group(['middleware' => ['api']], function () {
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Web Routes
 |--------------------------------------------------------------------------
 |
 | This route group applies the "web" middleware group to every route
@@ -52,7 +52,9 @@ Route::group(['middleware' => ['web']], function () {
     */
     // Route::auth();
     Route::get('login', 'Auth\AuthMinimalController@showLoginForm');
+
     Route::post('login', 'Auth\AuthMinimalController@login');
+
     Route::get('logout', 'Auth\AuthMinimalController@logout');
 
     /*
@@ -66,12 +68,20 @@ Route::group(['middleware' => ['web']], function () {
       Route::group(['middleware' => 'role:admin'], function()
       {
         Route::get('/', ['as' => 'admin.dashboard', 'uses' => 'AdminController@index']);
+
         Route::get('/configs', ['as' => 'admin.configs', 'uses' => 'AdminConfigController@index']);
+
         Route::resource('users', 'AdminUserController', ['only' => 'index']);
+
         Route::resource('careers', 'AdminCareerController', ['except' => 'show']);
+
         Route::resource('courses', 'AdminCourseController', ['except' => 'show']);
+
         Route::resource('teachers', 'AdminTeacherController', ['except' => 'show']);
+
         Route::resource('types', 'AdminTypeController', ['except' => 'show']);
+
+        Route::resource('resources', 'AdminResourceController', ['except' => ['create', 'store', 'show']]);
       });
     });
 
@@ -82,4 +92,8 @@ Route::group(['middleware' => ['web']], function () {
     |
     */
     Route::get('/', 'HomeController@index');
+
+    Route::get('/courses/{course}/resources/{type?}', 'CourseResourceController@index');
+
+    Route::resource('resources', 'ResourceController', ['except' => ['edit', 'update', 'destroy']]);
 });

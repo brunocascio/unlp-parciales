@@ -7,7 +7,7 @@
       <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.careers.store') }}" autocomplete="off">
         {!! csrf_field() !!}
 
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
           <label class="col-sm-2 control-label">Name</label>
 
           <div class="col-sm-8">

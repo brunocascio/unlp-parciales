@@ -3,11 +3,80 @@ body {
   background: #f2f2f2;
 }
 
+label {
+  font-weight: 500;
+}
+
+*:focus, .bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.padded {
+  padding: 10px 15px;
+}
+
+.margined {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.radius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 0px 20px -4px rgba(50,50,50,.3);
+  -moz-box-shadow: 0px 0px 20px -4px rgba(50,50,50,.3);
+  box-shadow: 0px 0px 20px -4px rgba(50,50,50,.3);
+}
+
+.bootstrap-select .btn-default {
+  background: #fff !important;
+  border: 1px solid #dadada;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option,
+.bootstrap-select.btn-group .dropdown-menu li a span.text,
+.bootstrap-select .caret {
+  color: #3e3f3a;
+}
+
+.form-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*
+* Header
+*
+*/
+
+.navbar-right {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+/*
+* Tables
+*
+*/
+
 .table th, .table td {
   vertical-align: middle !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
 }
+
+/*
+* Home
+*
+*/
 
 .natural-language-container {
   min-height: 500px;
@@ -40,3 +109,8 @@ body {
 .natural-language-container .bootstrap-select>.dropdown-toggle {
   height: 7rem;
 }
+
+/*
+* Resource Create
+*
+*/

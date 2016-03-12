@@ -18,16 +18,20 @@
 
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
-      <!-- Right Side Of Navbar -->
-      <ul class="nav navbar-nav navbar-right">
-        <!-- Authentication Links -->
+      <ul class="nav navbar-nav navbar-left">
         @if (Auth::guest())
           <li><a href="{{ url('/login') }}">Login</a></li>
-          <li><a href="{{ url('/register') }}">Register</a></li>
         @else
           @if ( isAdmin() )
             <li><a href="{{ route('admin.dashboard') }}">Administración</a></li>
           @endif
+        @endif
+      </ul>
+
+      <!-- Right Side Of Navbar -->
+      <ul class="nav navbar-nav navbar-right">
+        <!-- Authentication Links -->
+        @if (!Auth::guest())
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
               {{ ucfirst(Auth::user()->name) }} <span class="caret"></span>
@@ -37,6 +41,23 @@
             </ul>
           </li>
         @endif
+        <li>
+          @if ( ! Route::is('resources.create') )
+            <button
+              role="button"
+              data-href="{{ route('resources.create') }}"
+              class="btn btn-sm btn-success navbar-btn">
+                Subir Recurso
+            </button>
+          @else
+            <button
+              role="button"
+              data-href="{{ URL::previous() }}"
+              class="btn btn-sm btn-danger navbar-btn">
+                Volver
+            </button>
+          @endif
+        </li>
       </ul>
     </div>
   </div>

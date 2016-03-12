@@ -11,6 +11,8 @@ class Type extends Model implements SluggableInterface
     use SluggableTrait;
 
     public $timestamps = false;
+
     protected $fillable = [ 'name' ];
+
     protected $sluggable = [ 'build_from' => 'name', 'save_to' => 'slug' ];
 }

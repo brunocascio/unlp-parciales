@@ -1,16 +1,17 @@
 <nav class="panel-group" role="tablist">
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="menuHeadingTests">
-      <a class="" role="button" data-toggle="collapse" href="#menu-tests" aria-expanded="true" aria-controls="menu-tests">
+    <div class="panel-heading" role="tab" id="menuHeadingResources">
+      <a class="" role="button" data-toggle="collapse" href="#menu-resources" aria-expanded="true" aria-controls="menu-resources">
         <h4 class="panel-title">
-          Tests
+          Resources
         </h4>
       </a>
     </div>
-    <div id="menu-tests" class="panel-collapse {{ !Route::is('admin.tests.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingTests" aria-expanded="true">
+    <div id="menu-resources" class="panel-collapse {{ !Route::is('admin.resources.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingResources" aria-expanded="true">
       <ul class="list-group">
-        <li class="list-group-item">All</li>
-        <li class="list-group-item">New</li>
+        <li class="list-group-item">
+          <a href="{{ route('admin.resources.index') }}">All</a>
+        </li>
       </ul>
     </div>
   </div>
