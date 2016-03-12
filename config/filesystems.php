@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 'public_resources',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,18 +54,18 @@ return [
             'visibility' => 'public',
         ],
 
+        'public_resources' => [
+            'driver' => 'local',
+            'root' => public_path('files'),
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => 'your-key',
             'secret' => 'your-secret',
             'region' => 'your-region',
             'bucket' => 'your-bucket',
-        ],
-
-        'dropbox' => [
-          'driver' => 'dropbox',
-          'clientIdentifier' => env('DROPBOX_CLIENT_ID', 'your-api-key'),
-          'accessToken' => env('DROPBOX_ACCESS_TOKEN', 'your-access-token'),
         ]
 
     ],
