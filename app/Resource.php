@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 
+use App\Type;
+
 class Resource extends Model implements SluggableInterface
 {
   use SluggableTrait;
@@ -19,7 +21,7 @@ class Resource extends Model implements SluggableInterface
   }
 
   public function teacher() {
-    return $this->hasOne('App\Teacher');
+    return $this->belongsTo('App\Teacher');
   }
 
   public function type() {
@@ -32,6 +34,11 @@ class Resource extends Model implements SluggableInterface
 
   public function files() {
     return $this->hasMany('App\File');
+  }
+
+  public function scopeWithTypeSlug($query, $slug) {
+    $type = Type::where('slug', $slug)->firstOrFail();
+    return $query->where('type_id', $type->id);
   }
 
   public function generateResourceFolder() {

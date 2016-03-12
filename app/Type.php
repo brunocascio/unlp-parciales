@@ -15,4 +15,9 @@ class Type extends Model implements SluggableInterface
     protected $fillable = [ 'name' ];
 
     protected $sluggable = [ 'build_from' => 'name', 'save_to' => 'slug' ];
+
+    public function resources()
+    {
+      return $this->hasMany('App\Resource');
+    }
 }

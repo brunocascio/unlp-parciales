@@ -57,7 +57,7 @@ class ResourceController extends Controller
       $name = $resource->generateResourceName();
       $path = $resource->generateResourcePath();
 
-      Storage::put($path, file_get_contents($uploadedFile->getRealPath()));
+      Storage::put("{$path}.{$type}", file_get_contents($uploadedFile->getRealPath()));
 
       $file = File::create([
         'resource_id' => $resource->id,

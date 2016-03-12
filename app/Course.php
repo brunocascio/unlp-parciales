@@ -22,7 +22,7 @@ class Course extends Model implements SluggableInterface
       return $this->belongsToMany('App\Career', 'careers_courses');
     }
 
-    public function types() {
-      return Type::all();
+    public function resources() {
+      return $this->hasMany('App\Resource');
     }
 }

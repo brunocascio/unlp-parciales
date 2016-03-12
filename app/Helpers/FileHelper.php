@@ -38,8 +38,22 @@ if (!function_exists('get_public_resources_path')) {
      * @param
      * @return
      */
-    function get_public_resources_path()
+    function get_public_resources_path($path = null)
     {
-      return public_path() . "/files/";
+      return public_path() . "/files/{$path}";
+    }
+}
+
+if (!function_exists('get_public_files_url')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function get_public_files_url($path = null)
+    {
+      return  url("/files/{$path}");
     }
 }
