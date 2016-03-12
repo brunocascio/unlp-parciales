@@ -23,6 +23,7 @@ class CreateResourcesTable extends Migration
       $table->date('resource_date')->index();
       $table->tinyInteger('number')->index()->nullable();
       $table->boolean('published')->default(0);
+      $table->integer('stars_count')->unsigned()->default(0);
       $table->timestamps();
       $table->integer('course_id')->unsigned();
       $table->integer('teacher_id')->unsigned()->nullable();
