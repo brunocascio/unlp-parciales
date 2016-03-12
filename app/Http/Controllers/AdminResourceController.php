@@ -16,7 +16,21 @@ class AdminResourceController extends AdminController
      */
     public function index()
     {
-        return view('admin.resources.index', ['resources' => Resource::all()]);
+        return view('admin.resources.index', ['resources' => Resource::published()->get()]);
+    }
+
+    public function getUnpublisheds()
+    {
+      return view('admin.resources.index', ['resources' => Resource::unpublished()->get()]);
+    }
+
+    public function putPublish($id)
+    {
+      Resource::findOrFail($id)->publish();
+
+      return redirect()
+        ->route('admin.resources.index')
+        ->with(['success' => 'Published!']);
     }
 
     /**
@@ -50,6 +64,10 @@ class AdminResourceController extends AdminController
      */
     public function destroy($id)
     {
-        //
+      Resource::destroy($id);
+
+      return redirect()
+        ->route('admin.resources.index')
+        ->with(['success' => 'Removed!']);
     }
 }

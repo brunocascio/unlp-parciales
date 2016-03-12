@@ -2,8 +2,14 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="menuHeadingResources">
       <a class="" role="button" data-toggle="collapse" href="#menu-resources" aria-expanded="true" aria-controls="menu-resources">
-        <h4 class="panel-title">
-          Resources
+        <h4 class="panel-title clearfix">
+          <div class="pull-left">
+            Resources
+          </div>
+          <div class="pull-right">
+            <span class="label label-danger">{{ totalResourcesUnpublisheds() }}</span>
+            <span class="label label-default">{{ totalResources() }}</span>
+          </div>
         </h4>
       </a>
     </div>
@@ -11,6 +17,9 @@
       <ul class="list-group">
         <li class="list-group-item">
           <a href="{{ route('admin.resources.index') }}">All</a>
+        </li>
+        <li class="list-group-item">
+          <a href="{{ route('admin.resources.unpublisheds') }}">Unpublisheds</a>
         </li>
       </ul>
     </div>
@@ -23,7 +32,7 @@
             Types
           </div>
           <div class="pull-right">
-            <span class="badge">{{ totalTypes() }}</span>
+            <span class="label label-default">{{ totalTypes() }}</span>
           </div>
         </h4>
       </a>
@@ -47,7 +56,7 @@
             Users
           </div>
           <div class="pull-right">
-            <span class="badge">{{ totalUsers() }}</span>
+            <span class="label label-default">{{ totalUsers() }}</span>
           </div>
         </h4>
       </a>
@@ -69,7 +78,7 @@
             Careers
           </div>
           <div class="pull-right">
-            <span class="badge">{{ totalCareers() }}</span>
+            <span class="label label-default">{{ totalCareers() }}</span>
           </div>
         </h4>
       </a>
@@ -93,7 +102,7 @@
             Courses
           </div>
           <div class="pull-right">
-            <span class="badge">{{ totalCourses() }}</span>
+            <span class="label label-default">{{ totalCourses() }}</span>
           </div>
         </h4>
       </a>
@@ -117,7 +126,7 @@
             Teachers
           </div>
           <div class="pull-right">
-            <span class="badge">{{ totalTeachers() }}</span>
+            <span class="label label-default">{{ totalTeachers() }}</span>
           </div>
         </h4>
       </a>

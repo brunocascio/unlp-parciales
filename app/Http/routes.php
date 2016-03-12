@@ -82,6 +82,11 @@ Route::group(['middleware' => ['web']], function () {
         Route::resource('types', 'AdminTypeController', ['except' => 'show']);
 
         Route::resource('resources', 'AdminResourceController', ['except' => ['create', 'store', 'show']]);
+
+        Route::controller('resources', 'AdminResourceController', [
+          'getUnpublisheds' => 'admin.resources.unpublisheds',
+          'putPublish' => 'admin.resources.publish'
+        ]);
       });
     });
 

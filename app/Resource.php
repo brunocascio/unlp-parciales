@@ -41,6 +41,19 @@ class Resource extends Model implements SluggableInterface
     return $query->where('type_id', $type->id);
   }
 
+  public function scopeUnpublished($query) {
+    return $query->where('published', false);
+  }
+
+  public function scopePublished($query) {
+    return $query->where('published', true);
+  }
+
+  public function publish() {
+    $this->published = true;
+    return $this->save();
+  }
+
   public function generateResourceFolder() {
     return "{$this->course->slug}/{$this->type->slug}";
   }
