@@ -2,7 +2,7 @@
 
 @section('content')
   @foreach($resources as $resource)
-    <article class="col-md-3">
+    <article class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h2 class="panel-title">{{ $resource->name }}</h2>
