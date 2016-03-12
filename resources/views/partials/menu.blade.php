@@ -52,7 +52,7 @@
           @else
             <button
               role="button"
-              data-href="{{ URL::previous() }}"
+              data-href="{{ route('home') }}"
               class="btn btn-sm btn-danger navbar-btn">
                 Volver
             </button>
