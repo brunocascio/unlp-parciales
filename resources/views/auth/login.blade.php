@@ -50,9 +50,7 @@
 
               <div class="form-group">
                 <div class="col-sm-6 col-sm-offset-4">
-                  <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-btn fa-sign-in"></i>Login
-                  </button>
+                  <button type="submit" class="btn btn-primary">Login</button>
                 </div>
               </div>
             </form>

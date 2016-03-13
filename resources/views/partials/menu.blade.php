@@ -51,14 +51,14 @@
               role="button"
               data-href="{{ route('resources.create') }}"
               class="btn btn-sm btn-success navbar-btn">
-                Subir Recurso
+                Upload Resource
             </button>
           @else
             <button
               role="button"
               data-href="{{ route('home') }}"
               class="btn btn-sm btn-danger navbar-btn">
-                Volver
+                Back
             </button>
           @endif
         </li>
