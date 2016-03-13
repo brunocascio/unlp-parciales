@@ -4,12 +4,14 @@
   <table class="table table-striped table-bordered table-condensed">
     <thead>
       <th>Name</th>
+      <th>Careers</th>
       <th>Actions</th>
     </thead>
     <tbody>
       @foreach ($courses as $course)
         <tr>
           <td>{{ $course->name }}</td>
+          <td>{{ $course->careers()->count() }}</td>
           <td>
             <div class="pull-left">
               <a role="button" class="btn btn-sm btn-primary" href="{{ route('admin.courses.edit', [$course->id])}}">

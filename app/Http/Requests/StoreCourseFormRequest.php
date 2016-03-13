@@ -23,8 +23,6 @@ class StoreCourseFormRequest extends Request
   */
   public function rules()
   {
-    // dd($this->request->all());
-
     return [
       'name' => "required|unique:courses,name,{$this->courses}|min:4|max:100",
       'careers.*.id' => 'required|distinct|exists:careers,id'

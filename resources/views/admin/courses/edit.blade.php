@@ -28,7 +28,7 @@
               class="form-control selectpicker show-tick"
               data-live-search="true"
               name="careers[]"
-              data-selected-text-format="count > 3"
+              data-selected-text-format="count > 2"
               data-style="btn-default"
               multiple>
               @foreach(App\Career::all() as $career)
