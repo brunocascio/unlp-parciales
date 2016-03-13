@@ -72,6 +72,14 @@ label {
 *
 */
 
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 63px;
+  top: -70px;
+  left: calc(50% - 100px);
+}
+
 .navbar .navbar-right li > .navbar-btn {
   margin-left: 15px;
   margin-right: 15px;

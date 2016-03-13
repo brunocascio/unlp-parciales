@@ -14,7 +14,11 @@
       <a class="navbar-brand" href="{{ url('/') }}">
         {{ getSiteTitle() }}
       </a>
+      <div class="text-center loader hidden" id="loading">
+        <div class='uil-ripple-css' style='transform:scale(0.2);'><div></div><div></div></div>
+      </div>
     </div>
+
 
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
 

@@ -1,5 +1,25 @@
 jQuery(function($){
 
+  $.fn.extend({
+    showLoading: function() {
+      this.removeClass('hidden');
+    },
+    hideLoading: function(){
+      this.addClass('hidden');
+    },
+    toggleLoading: function(){
+      this.toggleClass('hidden');
+    }
+  });
+
+  $(document).ajaxSend(function() {
+    $('#loading').showLoading();
+  });
+
+  $(document).ajaxComplete(function() {
+    $('#loading').hideLoading();
+  });
+
   var $selectCareer = $('#career-select');
   var $selectCourse = $('#course-select');
   var $selectType = $('#type-select');
@@ -37,6 +57,8 @@ jQuery(function($){
   */
   $selectCareer.change(function(e){
     e.preventDefault();
+
+
 
     $.get('/api/careers/'+$(this).val()+'/courses')
       .success(function(data){
