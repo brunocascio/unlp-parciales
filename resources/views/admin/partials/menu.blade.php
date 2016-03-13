@@ -66,7 +66,9 @@
         <li class="list-group-item">
           <a href="{{ route('admin.users.index') }}">All</a>
         </li>
-        <li class="list-group-item">New</li>
+        <li class="list-group-item">
+          <a href="{{ route('admin.users.create') }}">New</a>
+        </li>
       </ul>
     </div>
   </div>

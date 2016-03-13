@@ -129,6 +129,10 @@ jQuery(function($){
     location.href = $(this).data('href');
   });
 
+  $('[data-enable]').click(function(e){
+    $($(this).data('enable')).prop('disabled', false);
+  });
+
   /*
   * Initializers
   *

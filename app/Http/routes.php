@@ -71,7 +71,7 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::resource('configs', 'AdminConfigController', ['only' => ['index', 'edit', 'update']]);
 
-        Route::resource('users', 'AdminUserController', ['only' => 'index']);
+        Route::resource('users', 'AdminUserController', ['except' => 'destroy']);
 
         Route::resource('careers', 'AdminCareerController', ['except' => 'show']);
 

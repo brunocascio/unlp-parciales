@@ -15,16 +15,10 @@
           <td>{{ $user->email }}</td>
           <td>{{ $user->role }}</td>
           <td>
-            <div class="btn-group" role="group" aria-label="actions">
-              <button type="button" class="btn btn-sm btn-default">
-                <i class="glyphicon glyphicon-eye-open"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-primary">
+            <div class="pull-left">
+              <a role="button" class="btn btn-sm btn-primary" href="{{ route('admin.users.edit', [$user->id])}}">
                 <i class="glyphicon glyphicon-pencil"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-danger delete">
-                <i class="glyphicon glyphicon-trash"></i>
-              </button>
+              </a>
             </div>
           </td>
         </tr>
