@@ -69,7 +69,7 @@ Route::group(['middleware' => ['web']], function () {
       {
         Route::get('/', ['as' => 'admin.dashboard', 'uses' => 'AdminController@index']);
 
-        Route::get('/configs', ['as' => 'admin.configs', 'uses' => 'AdminConfigController@index']);
+        Route::resource('configs', 'AdminConfigController', ['only' => ['index', 'edit', 'update']]);
 
         Route::resource('users', 'AdminUserController', ['only' => 'index']);
 

@@ -13,10 +13,10 @@
           <td>{{ $config->key }}</td>
           <td>{{ $config->value }}</td>
           <td>
-            <div class="btn-group" role="group" aria-label="actions">
-              <button type="button" class="btn btn-sm btn-primary">
+            <div class="pull-left">
+              <a role="button" class="btn btn-sm btn-primary" href="{{ route('admin.configs.edit', [$config->id])}}">
                 <i class="glyphicon glyphicon-pencil"></i>
-              </button>
+              </a>
             </div>
           </td>
         </tr>

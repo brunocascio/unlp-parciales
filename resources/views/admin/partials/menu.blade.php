@@ -144,7 +144,7 @@
   </div>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a role="button" href="{{ route('admin.configs') }}">
+      <a role="button" href="{{ route('admin.configs.index') }}">
         <h4 class="panel-title">
           Settings
         </h4>
