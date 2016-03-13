@@ -54,6 +54,11 @@ class Resource extends Model implements SluggableInterface
     return $this->save();
   }
 
+  public function unpublish() {
+    $this->published = false;
+    return $this->save();
+  }
+
   public function generateResourceFolder() {
     return "{$this->course->slug}/{$this->type->slug}";
   }

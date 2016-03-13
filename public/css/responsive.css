@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+  .natural-language-container .bootstrap-select .dropdown-toggle .filter-option,
+  .dropdown-menu .text {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 768px) and (max-width:993px) {
+  .natural-language-container .section > .text,
+  .natural-language-container .bootstrap-select .dropdown-toggle .filter-option {
+    font-size: 3em;
+    line-height: 1.5em;
+  }
+
+  .dropdown-menu .text {
+    font-size: 1.8em;
+  }
+}
