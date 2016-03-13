@@ -32,17 +32,5 @@ class TypeTableSeeder extends Seeder
       Type::create([
         'name' => 'Coloquios'
       ]);
-
-      Type::create([
-        'name' => 'Teorías'
-      ]);
-
-      Type::create([
-        'name' => 'Prácticas'
-      ]);
-
-      Type::create([
-        'name' => 'Seminarios'
-      ]);
     }
 }
