@@ -24,7 +24,13 @@
         <div class="form-group{{ $errors->has('careers') ? ' has-error' : '' }}">
           <label class="col-sm-2 control-label">Careers</label>
           <div class="col-sm-8">
-            <select class="form-control selectpicker show-tick" data-live-search="true" name="careers[]" data-selected-text-format="count > 3" multiple data-style="btn-default">
+            <select
+              class="form-control selectpicker show-tick"
+              data-live-search="true"
+              name="careers[]"
+              data-selected-text-format="count > 3"
+              data-style="btn-default"
+              multiple>
               @foreach(App\Career::all() as $career)
                 <option
                   {{ $course->careers->contains($career) ? "selected" : "" }}
