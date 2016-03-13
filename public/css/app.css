@@ -56,6 +56,10 @@ label {
   border: 1px solid #dadada;
 }
 
+.bootstrap-select .dropdown-toggle:focus {
+  border-color: #29abe0;
+}
+
 .bootstrap-select.btn-group .dropdown-toggle .filter-option,
 .bootstrap-select.btn-group .dropdown-menu li a span.text,
 .bootstrap-select .caret {
@@ -101,12 +105,9 @@ label {
 *
 */
 
-.natural-language-container {
-  min-height: 500px;
-}
-
-.natural-language-container .section + .section {
+.natural-language-container .section:not(:first-child) {
   margin-top: 4em;
+  margin-bottom: 4em;
 }
 
 .natural-language-container .section > .text {
@@ -126,6 +127,11 @@ label {
 
 .natural-language-container .bootstrap-select>.dropdown-toggle {
   height: 7rem;
+}
+
+#search {
+  height: 70px;
+  font-size: 3em;
 }
 
 /*

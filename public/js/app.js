@@ -58,8 +58,6 @@ jQuery(function($){
   $selectCareer.change(function(e){
     e.preventDefault();
 
-
-
     $.get('/api/careers/'+$(this).val()+'/courses')
       .success(function(data){
         var courses = data.courses;
@@ -111,7 +109,6 @@ jQuery(function($){
 
   $search.click(function(e){
     e.preventDefault();
-
     if ( ! $(this).hasClass('disabled') ) {
       var course_slug = $selectCourse.val();
       var type_slug = $selectType.val();
