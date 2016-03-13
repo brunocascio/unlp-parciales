@@ -85,7 +85,8 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::controller('resources', 'AdminResourceController', [
           'getUnpublisheds' => 'admin.resources.unpublisheds',
-          'putPublish' => 'admin.resources.publish'
+          'putPublish' => 'admin.resources.publish',
+          'putUnpublish' => 'admin.resources.unpublish',
         ]);
       });
     });

@@ -4,6 +4,7 @@
   <table class="table table-striped table-bordered table-condensed">
     <thead>
       <th>Name</th>
+      <th>Active?</th>
       <th>Actions</th>
     </thead>
     <tbody>
@@ -12,14 +13,21 @@
           <td>{{ $resource->name }}</td>
           <td>
             <div class="pull-left">
+              @if (!$resource->published)
               <form class="form-inline" action="{{ route('admin.resources.publish', [$resource->id]) }}" method="POST">
+              @else
+              <form class="form-inline" action="{{ route('admin.resources.unpublish', [$resource->id]) }}" method="POST">
+              @endif
                 {!! csrf_field() !!}
                 <input type="hidden" name="_method" value="PUT">
-                <button type="submit" class="btn btn-sm btn-success">
-                  <i class="glyphicon glyphicon-check"></i>
+                <button type="submit" class="btn btn-sm {{ $resource->published ? 'btn-danger' : 'btn-info' }}">
+                  <i class="glyphicon {{ $resource->published ? 'glyphicon-ban-circle' : 'glyphicon-ok-circle' }}"></i>
+                  <span>{{ ! $resource->published ? 'Publish' : 'Unpublish'}}</span>
                 </button>
               </form>
             </div>
+          </td>
+          <td>
             <div class="pull-left">
               <a role="button" class="btn btn-sm btn-primary" href="{{ route('admin.resources.edit', [$resource->id])}}">
                 <i class="glyphicon glyphicon-pencil"></i>

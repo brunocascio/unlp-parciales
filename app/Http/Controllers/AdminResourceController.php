@@ -33,6 +33,15 @@ class AdminResourceController extends AdminController
         ->with(['success' => 'Published!']);
     }
 
+    public function putUnpublish($id)
+    {
+      Resource::findOrFail($id)->unpublish();
+
+      return redirect()
+        ->route('admin.resources.index')
+        ->with(['success' => 'Published!']);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
