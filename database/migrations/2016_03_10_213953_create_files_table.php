@@ -5,8 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateFilesTable extends Migration
 {
-
-  protected static $fileTypes = file_allowed_extensions();
   /**
   * Run the migrations.
   *
@@ -18,7 +16,7 @@ class CreateFilesTable extends Migration
       $table->increments('id');
       $table->string('name');
       $table->string('url');
-      $table->enum('type', static::$fileTypes);
+      $table->enum('type', file_allowed_extensions());
       $table->integer('resource_id')->unsigned();
 
       $table->foreign('resource_id')

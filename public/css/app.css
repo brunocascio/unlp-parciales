@@ -7,12 +7,26 @@ label {
   font-weight: 500;
 }
 
+.icon-text > * {
+  font-size: 12px;
+  line-height: 12px;
+  vertical-align: middle;
+}
+
+.icon-text > span {
+  vertical-align: sub;
+}
+
 *:focus, .bootstrap-select .dropdown-toggle:focus {
   outline: none !important;
 }
 
 .bg-white {
   background: #fff;
+}
+
+.panel .panel-heading > .pull-left > .panel-title {
+  padding-top: 2px;
 }
 
 .padded {

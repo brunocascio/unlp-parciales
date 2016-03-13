@@ -100,5 +100,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/courses/{course}/resources/{type?}', 'CourseResourceController@index');
 
-    Route::resource('resources', 'ResourceController', ['except' => ['edit', 'update', 'destroy']]);
+    Route::resource('resources', 'ResourceController', ['except' => ['index', 'edit', 'update', 'destroy']]);
+
+    Route::controller('files', 'FileController', [
+      'getDownloadFile' => 'files.download',
+    ]);
 });

@@ -42,7 +42,11 @@
         <select class="form-control selectpicker" name="course_id" data-live-search="true">
           <option></option>
           @foreach($courses as $course)
-            <option value="{{$course->id}}">{{ $course->name }}</option>
+            <option
+              value="{{$course->id}}"
+              {{ $course->id == old('course_id') ? 'selected' : ''}}>
+                {{ $course->name }}
+          </option>
           @endforeach
         </select>
         @if ($errors->has('course_id'))
@@ -58,7 +62,11 @@
             <select class="form-control selectpicker" name="teacher_id" data-live-search="true">
               <option></option>
               @foreach($teachers as $teacher)
-                <option value="{{$teacher->id}}">{{ $teacher->name }}</option>
+                <option
+                  value="{{$teacher->id}}"
+                  {{ $teacher->id == old('teacher_id') ? 'selected' : ''}}>
+                    {{ $teacher->name }}
+                </option>
               @endforeach
             </select>
             @if ($errors->has('teacher_id'))
@@ -74,7 +82,11 @@
             <select class="form-control selectpicker" name="type_id" data-live-search="true">
               <option></option>
               @foreach($types as $type)
-                <option value="{{$type->id}}">{{ $type->name }}</option>
+                <option
+                  value="{{$type->id}}"
+                  {{ $type->id == old('type_id') ? 'selected' : ''}}>
+                    {{ $type->name }}
+                </option>
               @endforeach
             </select>
             @if ($errors->has('type_id'))

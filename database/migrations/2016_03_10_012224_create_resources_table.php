@@ -24,6 +24,7 @@ class CreateResourcesTable extends Migration
       $table->tinyInteger('number')->index()->nullable();
       $table->boolean('published')->default(0);
       $table->integer('stars_count')->unsigned()->default(0);
+      $table->integer('downloads_count')->unsigned()->default(0);
       $table->timestamps();
       $table->integer('course_id')->unsigned();
       $table->integer('teacher_id')->unsigned()->nullable();
@@ -33,7 +34,7 @@ class CreateResourcesTable extends Migration
       $table->foreign('course_id')
       ->references('id')
       ->on('courses');
-      
+
       $table->foreign('teacher_id')
       ->references('id')
       ->on('teachers');
