@@ -47,15 +47,22 @@ class Unx extends Command
 
       if ($this->confirm('Do you wish to continue? It\'s install a fresh instance of UNXParciales'))
       {
+        $this->info('Installing Migrations...');
         $this->call('migrate:install');
+        $this->info('Generating key...');
         $this->call('key:generate');
+        $this->info('Migrating tables from migrations...');
         $this->call('migrate');
+        $this->info('Seeding data...');
         $this->call('db:seed');
+
+        $this->info('Hey! I need your help!');
 
         $site_title = $this->ask('What is the site title?');
         $admin_email = $this->ask('What is the admin email?');
         $admin_password = $this->secret('What is the admin password?');
 
+        $this->info('Updating...');
         // Update site title
         Config::where('key', 'title')->update(['value' => $site_title]);
         // Update admin password
@@ -63,6 +70,14 @@ class Unx extends Command
           'email' => $admin_email,
           'password' => bcrypt($admin_password)
         ]);
+
+        $this->info('Caching classes, configs and routes...');
+
+        $this->call('optimize');
+        $this->call('route:cache');
+        $this->call('config:cache');
+
+        $this->info('All OK! Bye :)');
       }
     }
 }
