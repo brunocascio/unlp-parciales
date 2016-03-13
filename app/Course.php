@@ -14,6 +14,8 @@ class Course extends Model implements SluggableInterface
 
     protected $hidden = ['pivot'];
 
+    protected $fillable = [ 'name' ];
+
     protected $sluggable = [ 'build_from' => 'name', 'save_to'    => 'slug' ];
 
     public function careers() {
