@@ -16,3 +16,17 @@ if (!function_exists('getSiteTitle')) {
       return $title ? $title->value : '';
     }
 }
+
+if (!function_exists('getAvailableRoles')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function getAvailableRoles()
+    {
+      return ['user', 'moderator', 'admin'];
+    }
+}

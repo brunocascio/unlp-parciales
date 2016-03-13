@@ -16,30 +16,51 @@ class AdminResourceController extends AdminController
      */
     public function index()
     {
-        return view('admin.resources.index', ['resources' => Resource::published()->get()]);
+        return view('admin.resources.index', [
+          'resources' => Resource::published()->get()
+        ]);
     }
 
+    /**
+     * Display a listing of the resources unpublisheds.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function getUnpublisheds()
     {
-      return view('admin.resources.index', ['resources' => Resource::unpublished()->get()]);
+      return view('admin.resources.index', [
+        'resources' => Resource::unpublished()->get()
+      ]);
     }
 
+    /**
+     * Publishes the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function putPublish($id)
     {
       Resource::findOrFail($id)->publish();
 
       return redirect()
-        ->route('admin.resources.index')
+        ->route('admin.resources.unpublished')
         ->with(['success' => 'Published!']);
     }
 
+    /**
+     * Unpublishes the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function putUnpublish($id)
     {
       Resource::findOrFail($id)->unpublish();
 
       return redirect()
         ->route('admin.resources.index')
-        ->with(['success' => 'Published!']);
+        ->with(['success' => 'Unpublished!']);
     }
 
     /**

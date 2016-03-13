@@ -60,7 +60,11 @@ class Unx extends Command
 
         $site_title = $this->ask('What is the site title?');
         $admin_email = $this->ask('What is the admin email?');
-        $admin_password = $this->secret('What is the admin password?');
+        $admin_password = null;
+
+        while ( empty($admin_password) || strlen($admin_password) < 8 ) {
+          $admin_password = $this->secret('What is the admin password? (8 characters minimum)');
+        }
 
         $this->info('Updating...');
         // Update site title
@@ -71,11 +75,14 @@ class Unx extends Command
           'password' => bcrypt($admin_password)
         ]);
 
-        $this->info('Caching classes, configs and routes...');
-
         $this->call('optimize');
-        $this->call('route:cache');
-        $this->call('config:cache');
+
+        if ($this->confirm('Do you want caching? (Production ready)'))
+        {
+          $this->info('Caching classes, configs and routes...');
+          $this->call('route:cache');
+          $this->call('config:cache');
+        }
 
         $this->info('All OK! Bye :)');
       }
