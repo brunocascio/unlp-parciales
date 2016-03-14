@@ -22,7 +22,8 @@ class CourseResourceController extends Controller
 
     $res = Course::where('slug', $course_slug)
       ->firstOrFail()
-      ->resources();
+      ->resources()
+      ->published();
 
     if ($type_slug) $res->withTypeSlug($type_slug);
 

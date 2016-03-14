@@ -17,5 +17,10 @@ class ConfigTableSeeder extends Seeder
         'key' => 'title',
         'value' => 'UNXParciales',
       ]);
+
+      Config::create([
+        'key' => 'google-analitycs',
+        'value' => '',
+      ]);
     }
 }

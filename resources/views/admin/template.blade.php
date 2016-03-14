@@ -13,3 +13,5 @@
     @yield('main')
   </section>
 @endsection
+
+@section('analitycs')@endsection

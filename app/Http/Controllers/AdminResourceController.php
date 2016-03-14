@@ -44,7 +44,7 @@ class AdminResourceController extends AdminController
       Resource::findOrFail($id)->publish();
 
       return redirect()
-        ->route('admin.resources.unpublished')
+        ->route('admin.resources.unpublisheds')
         ->with(['success' => 'Published!']);
     }
 

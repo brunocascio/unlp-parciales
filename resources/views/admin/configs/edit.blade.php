@@ -12,7 +12,9 @@
           <label class="col-sm-2 control-label">Value</label>
 
           <div class="col-sm-8">
-            <input type="text" class="form-control" name="value" value="{{ old('value') ? old('value') : $config->value }}">
+            <textarea class="form-control" name="value" placeholder="Value" rows="4">
+              {{ $config->value }}
+            </textarea>
             @if ($errors->has('value'))
               <span class="help-block">
                 <strong>{{ $errors->first('value') }}</strong>

@@ -17,6 +17,20 @@ if (!function_exists('getSiteTitle')) {
     }
 }
 
+if (!function_exists('google_analitycs_code')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function google_analitycs_code()
+    {
+      return Config::googleAnalitycsCode();
+    }
+}
+
 if (!function_exists('getAvailableRoles')) {
 
     /**

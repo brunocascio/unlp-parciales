@@ -16,15 +16,6 @@ use App\File;
 
 class ResourceController extends Controller
 {
-  /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function index()
-  {
-    return view('resources.index', ['resources' => Resource::all()]);
-  }
 
   /**
   * Show the form for creating a new resource.
@@ -67,7 +58,7 @@ class ResourceController extends Controller
       ]);
 
       return ( $resource && $file )
-         ? redirect()->route('resources.show', [$resource->id])
+         ? redirect()->route('home')->with('info', 'Resource Uploaded. Pending of revision.')
          : redirect()->back()->with('error', 'Failed :( Try Again!');
     });
   }
