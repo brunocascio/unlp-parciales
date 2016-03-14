@@ -31,6 +31,20 @@ if (!function_exists('google_analitycs_code')) {
     }
 }
 
+if (!function_exists('has_google_analitycs')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function has_google_analitycs()
+    {
+      return Config::hasGoogleAnalitycsCode();
+    }
+}
+
 if (!function_exists('getAvailableRoles')) {
 
     /**

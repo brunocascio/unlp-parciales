@@ -16,4 +16,8 @@ class Config extends Model
         ? $gcode->first()->value
         : '';
     }
+
+    public static function hasGoogleAnalitycsCode() {
+      return !empty(self::googleAnalitycsCode());
+    }
 }
