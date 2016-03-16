@@ -49,13 +49,15 @@ class Resource extends Model implements SluggableInterface
     return $query->where('published', true);
   }
 
-  public function publish() {
+  public function publish($approved_by) {
     $this->published = true;
+    $this->approved_by = $approved_by;
     return $this->save();
   }
 
   public function unpublish() {
     $this->published = false;
+    $this->approved_by = null;
     return $this->save();
   }
 

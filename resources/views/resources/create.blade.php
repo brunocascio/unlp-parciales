@@ -111,8 +111,7 @@
         <input
           name="file"
           type="file"
-          class="file file-upload file-loading"
-          data-allowed-file-extensions='[{{ file_allowed_extensions_string() }}]'">
+          data-allowed-file-extensions='[{{ file_allowed_extensions_string() }}]'>
         @if ($errors->has('file'))
           <span class="help-block">
             <strong>{{ $errors->first('file') }}</strong>

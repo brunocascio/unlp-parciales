@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
+use Auth;
 use App\Resource;
+use App\Course;
+use App\Teacher;
+use App\Type;
 
 class AdminResourceController extends AdminController
 {
@@ -14,7 +18,7 @@ class AdminResourceController extends AdminController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getIndex()
     {
         return view('admin.resources.index', [
           'resources' => Resource::published()->get()
@@ -41,7 +45,9 @@ class AdminResourceController extends AdminController
      */
     public function putPublish($id)
     {
-      Resource::findOrFail($id)->publish();
+      $published_by = Auth::user()->id;
+
+      Resource::findOrFail($id)->publish($published_by);
 
       return redirect()
         ->route('admin.resources.unpublisheds')
@@ -69,9 +75,16 @@ class AdminResourceController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function getEdit($id)
     {
-        //
+      $resource = Resource::findOrFail($id);
+
+      return view('admin.resources.edit', [
+        'resource' => $resource,
+        'teachers' => Teacher::all(),
+        'courses' => Course::all(),
+        'types' => Type::all()
+      ]);
     }
 
     /**
@@ -81,7 +94,7 @@ class AdminResourceController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function putUpdate(Request $request, $id)
     {
         //
     }

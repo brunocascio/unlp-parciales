@@ -40,7 +40,9 @@ class AdminUserController extends AdminController
   */
   public function store(StoreUserRequest $request)
   {
-    User::create($request->all());
+    $user = new User($request->all());
+    $user->role = $request->get('role');
+    $user->save();
 
     return redirect()
       ->route('admin.users.index')

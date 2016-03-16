@@ -23,6 +23,7 @@ class TypeController extends Controller
       ->join('careers', 'careers_courses.career_id', '=', 'careers.id')
       ->where('courses.slug', $course_slug)
       ->where('careers.slug', $career_slug)
+      ->where('resources.published', 1)
       ->select('types.*')
       ->distinct()
       ->get();

@@ -65,9 +65,23 @@ Route::group(['middleware' => ['web']], function () {
     */
     Route::group(['prefix' => 'admin'], function()
     {
-      Route::group(['middleware' => 'role:admin'], function()
+
+      Route::group(['middleware' => 'role:moderator,admin'], function()
       {
         Route::get('/', ['as' => 'admin.dashboard', 'uses' => 'AdminController@index']);
+        
+        Route::controller('resources', 'AdminResourceController', [
+          'getIndex' => 'admin.resources.index',
+          'getEdit' => 'admin.resources.edit',
+          'putUpdate' => 'admin.resources.update',
+          'getUnpublisheds' => 'admin.resources.unpublisheds',
+          'putPublish' => 'admin.resources.publish',
+          'putUnpublish' => 'admin.resources.unpublish',
+        ]);
+      });
+
+      Route::group(['middleware' => 'role:admin'], function()
+      {
 
         Route::resource('configs', 'AdminConfigController', ['only' => ['index', 'edit', 'update']]);
 
@@ -81,13 +95,7 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::resource('types', 'AdminTypeController', ['except' => 'show']);
 
-        Route::resource('resources', 'AdminResourceController', ['except' => ['create', 'store', 'show']]);
-
-        Route::controller('resources', 'AdminResourceController', [
-          'getUnpublisheds' => 'admin.resources.unpublisheds',
-          'putPublish' => 'admin.resources.publish',
-          'putUnpublish' => 'admin.resources.unpublish',
-        ]);
+        Route::resource('resources', 'AdminResourceController', ['only' => ['destroy']]);
       });
     });
 

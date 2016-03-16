@@ -13,3 +13,17 @@ if (!function_exists('isAdmin')) {
       return Auth::check() && Auth::user()->isAdmin();
     }
 }
+
+if (!function_exists('isModerator')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function isModerator()
+    {
+      return Auth::check() && Auth::user()->isModerator();
+    }
+}

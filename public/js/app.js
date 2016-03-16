@@ -1,5 +1,18 @@
 jQuery(function($){
 
+  /*
+  * Initializers
+  *
+  */
+  $('[type="file"]').fileinput({
+    showUpload: false,
+    previewFileType: 'any'
+  }).fileinput('refresh');
+
+  /*
+  * Extends
+  *
+  */
   $.fn.extend({
     showLoading: function() {
       this.removeClass('hidden');
@@ -51,6 +64,12 @@ jQuery(function($){
     });
   }
 
+  window.noResultsSelectMessage = function(id) {
+    $("[data-id='"+id+"']")
+      .find('.filter-option')
+      .html('No Results');
+  }
+
   /*
   * Career Select Changes
   *
@@ -65,6 +84,9 @@ jQuery(function($){
           populateCourses(courses);
           $selectCourse.prop('disabled', false);
           $selectCourse.selectpicker('refresh');
+        } else {
+          $selectType.prop('disabled', true);
+          noResultsSelectMessage($selectCourse.attr('id'));
         }
       })
       .fail(function(err){
@@ -90,6 +112,9 @@ jQuery(function($){
           populateTypes(types);
           $selectType.prop('disabled', false);
           $selectType.selectpicker('refresh');
+        } else {
+          $selectType.prop('disabled', true);
+          noResultsSelectMessage($selectType.attr('id'));
         }
       })
       .fail(function(err){
@@ -131,15 +156,6 @@ jQuery(function($){
 
   $('[data-enable]').click(function(e){
     $($(this).data('enable')).prop('disabled', false);
-  });
-
-  /*
-  * Initializers
-  *
-  */
-  $(".file-upload").fileinput({
-    'showUpload':false,
-    'previewFileType': 'any'
   });
 
 });

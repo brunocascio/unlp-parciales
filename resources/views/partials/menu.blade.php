@@ -26,7 +26,7 @@
         @if (Auth::guest())
           <li><a href="{{ url('/login') }}">Login</a></li>
         @else
-          @if ( isAdmin() )
+          @if ( isModerator() )
             <li><a href="{{ route('admin.dashboard') }}">Administración</a></li>
           @endif
         @endif
