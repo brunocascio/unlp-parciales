@@ -15,7 +15,7 @@
         {{ getSiteTitle() }}
       </a>
       <div class="text-center loader hidden" id="loading">
-        <div class='uil-ripple-css' style='transform:scale(0.2);'><div></div><div></div></div>
+        <div class='uil-ripple-css' style='transform:scale(0.2);'></div>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
           <li><a href="{{ url('/login') }}">Login</a></li>
         @else
           @if ( isModerator() )
-            <li><a href="{{ route('admin.dashboard') }}">Administración</a></li>
+            <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
           @endif
         @endif
       </ul>

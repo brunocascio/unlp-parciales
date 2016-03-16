@@ -96,7 +96,7 @@ class AdminResourceController extends AdminController
      */
     public function putUpdate(Request $request, $id)
     {
-        //
+        // TODO:
     }
 
     /**

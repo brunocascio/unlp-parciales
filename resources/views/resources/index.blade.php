@@ -15,19 +15,27 @@
         </div>
         <div class="panel-body">
           <div class="">
-            <strong>Profesor:</strong>
+            <strong>Teacher:</strong>
             <span>{{ $resource->teacher->name }}</span>
+          </div>
+          <div class="">
+            <strong>Resource Date:</strong>
+            <span>{{ $resource->resource_date }}</span>
           </div>
           @if ( $resource->number )
             <div class="">
-              <strong>Fecha/Mesa:</strong>
+              <strong>Date Type:</strong>
               <span>{{ $resource->number }}</span>
             </div>
           @endif
+          <div class="">
+            <strong>Description</strong>
+            <div>{{ $resource->description }}</div>
+          </div>
         </div>
         <div class="panel-footer">
           @foreach($resource->files as $file)
-            <a href="{{ route('files.download', [$file->name]) }}">Descargar</a>
+            <a href="{{ route('files.download', [$file->name]) }}">Download</a>
           @endforeach
         </div>
       </div>
