@@ -2,7 +2,8 @@
 
 @section('content')
   <article class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 bg-white shadow radius padded margined">
-    <form class="form" action="{{ route('admin.resources.update') }}" method="POST" enctype="multipart/form-data">
+
+    <form class="form" action="{{ route('admin.resources.update', [$resource->id]) }}" method="POST" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <input type="hidden" name="_method" value="PATCH">
 
@@ -46,7 +47,7 @@
           @foreach($courses as $course)
             <option
               value="{{$course->id}}"
-              {{ ($course->id == ($resource->course->id or old('course_id'))) ? 'selected' : ''}}>
+              {{ ($course->id == $resource->course->id) ? 'selected' : ''}}>
                 {{ $course->name }}
           </option>
           @endforeach
@@ -66,7 +67,7 @@
               @foreach($teachers as $teacher)
                 <option
                   value="{{$teacher->id}}"
-                  {{ ($teacher->id == ($resource->teacher->id or old('teacher_id'))) ? 'selected' : ''}}>
+                  {{ ($teacher->id == $resource->teacher->id) ? 'selected' : ''}}>
                     {{ $teacher->name }}
                 </option>
               @endforeach
@@ -86,7 +87,7 @@
               @foreach($types as $type)
                 <option
                   value="{{$type->id}}"
-                  {{ ($type->id == ($resource->type->id or old('type_id'))) ? 'selected' : ''}}>
+                  {{ ($type->id == $resource->type->id) ? 'selected' : ''}}>
                     {{ $type->name }}
                 </option>
               @endforeach
@@ -101,9 +102,7 @@
       </div>
       <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
         <label for="description">Description (Optional)</label>
-        <textarea name="description" class="form-control" rows="3">
-          {{ $resource->description or old('description') }}
-        </textarea>
+        <textarea name="description" class="form-control" rows="3">{{$resource->description }}</textarea>
         @if ($errors->has('description'))
           <span class="help-block">
             <strong>{{ $errors->first('description') }}</strong>
@@ -112,12 +111,11 @@
       </div>
       <div class="form-group">
         <label class="control-label">File</label>
-        <input
-          name="file"
-          type="file"
-          data-initial-preview="{{ get_public_files_url($resource->files()->first()->url) }}"
-          readonly="true"
-          disabled="true">
+        <div class="file-preview">
+          <a href='{{ get_public_files_url($resource->files()->first()->url) }}' target='_blank'>
+            {{ $resource->files()->first()->name }}
+          </a>
+        </div>
       </div>
       <hr>
       <button type="submit" class="btn btn-block btn-success">Update</button>

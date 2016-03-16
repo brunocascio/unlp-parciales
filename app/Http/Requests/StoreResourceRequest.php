@@ -33,7 +33,7 @@ class StoreResourceRequest extends Request
       "teacher_id" => "exists:teachers,id",
       "type_id" => "required|exists:types,id",
       "description" => "max:255",
-      "file" => "required|mimes:{$this->file_extensions()}",
+      "file" => "required|max:10000|mimes:{$this->file_extensions()}",
     ];
   }
 

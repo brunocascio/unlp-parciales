@@ -57,20 +57,13 @@ class ResourceController extends Controller
         'url' => "{$path}.{$type}"
       ]);
 
-      return ( $resource && $file )
-         ? redirect()->route('home')->with('info', 'Resource Uploaded. Pending of revision.')
-         : redirect()->back()->with('error', 'Failed :( Try Again!');
+      if ( !$resource || !$file ) {
+        return redirect()->back()->with('error', 'Failed :( Try Again!');
+      }
     });
-  }
 
-  /**
-  * Display the specified resource.
-  *
-  * @param  int  $id
-  * @return \Illuminate\Http\Response
-  */
-  public function show($id)
-  {
-    //
+    return redirect()
+    ->route('home')
+    ->with('info', 'Resource Uploaded. Pending of revision.');
   }
 }

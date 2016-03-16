@@ -6,7 +6,9 @@ jQuery(function($){
   */
   $('[type="file"]').fileinput({
     showUpload: false,
-    previewFileType: 'any'
+    maxFileSize: 10000,
+    minFileCount: 1,
+    maxFileCount: 1,
   }).fileinput('refresh');
 
   /*
@@ -90,7 +92,6 @@ jQuery(function($){
         }
       })
       .fail(function(err){
-        console.error(err);
         $selectCourse.prop('disabled', true);
         $selectType.prop('disabled', true);
       })
@@ -118,7 +119,6 @@ jQuery(function($){
         }
       })
       .fail(function(err){
-        console.error(err);
         $selectType.prop('disabled', true);
       })
   });

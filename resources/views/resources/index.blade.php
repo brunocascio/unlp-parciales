@@ -22,20 +22,20 @@
             <strong>Resource Date:</strong>
             <span>{{ $resource->resource_date }}</span>
           </div>
-          @if ( $resource->number )
-            <div class="">
-              <strong>Date Type:</strong>
-              <span>{{ $resource->number }}</span>
-            </div>
-          @endif
+          <div class="">
+            <strong>Date Type:</strong>
+            <span>{{ $resource->number ? $resource->number : '-' }}</span>
+          </div>
           <div class="">
             <strong>Description</strong>
-            <div>{{ $resource->description }}</div>
+            <div>{{ $resource->description ? $resource->description : '-' }}</div>
           </div>
         </div>
         <div class="panel-footer">
           @foreach($resource->files as $file)
-            <a href="{{ route('files.download', [$file->name]) }}">Download</a>
+            <a href="{{ route('files.download', [$file->name]) }}">
+              Download (.{{ $file->type }})
+            </a>
           @endforeach
         </div>
       </div>

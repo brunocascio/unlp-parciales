@@ -4,6 +4,7 @@
   <table class="table table-striped table-bordered table-condensed">
     <thead>
       <th>Name</th>
+      <th>Type<th>
       <th>Active?</th>
       <th>Actions</th>
     </thead>
@@ -11,6 +12,7 @@
       @foreach ($resources as $resource)
         <tr>
           <td>{{ $resource->name }}</td>
+          <td>{{ $resource->type->name }}</td>
           <td>
             <div class="pull-left">
               @if (!$resource->published)
