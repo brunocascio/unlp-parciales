@@ -29,7 +29,7 @@
       </div>
 
       <div class="text-center section clearfix">
-        <div class="col-sm-4 hidden-xs text">And I Want</div>
+        <div class="col-sm-4 hidden-xs text">I Want</div>
         <div class="col-sm-8 col-xs-12">
           <div class="row">
             <select id="type-select" class="selectpicker" data-live-search="true" disabled data-title="Select a Resource">
