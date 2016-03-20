@@ -18,6 +18,7 @@ return [
   'upload' => 'Upload',
   'upload_resource' => 'Upload Resource',
   'back' => 'Back',
+  'show' => 'Show',
   'courses' => 'Courses',
   'teachers' => 'Teachers',
   'settings' => 'Settings',

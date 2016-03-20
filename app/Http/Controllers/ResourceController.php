@@ -18,6 +18,18 @@ class ResourceController extends Controller
 {
 
   /**
+  * Show the resource
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function show($slug)
+  {
+    $resource = Resource::where('slug', $slug)->firstOrFail();
+
+    return view('resources.show', [ 'resource' => $resource ]);
+  }
+
+  /**
   * Show the form for creating a new resource.
   *
   * @return \Illuminate\Http\Response

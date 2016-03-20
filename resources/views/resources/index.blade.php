@@ -33,9 +33,12 @@
             <div class="text-overflow">{{ $resource->description ? $resource->description : '-' }}</div>
           </div>
         </div>
-        <div class="panel-footer">
+        <div class="panel-footer clearfix">
+          <a class="pull-left btn btn-sm btn-block btn-info" href="{{ route('resources.show', [$resource->slug]) }}">
+            {{ trans('texts.show') }}
+          </a>
           @foreach($resource->files as $file)
-            <a href="{{ route('files.download', [$file->name]) }}">
+            <a class="pull-right btn btn-sm btn-block btn-success" href="{{ route('files.download', [$file->name]) }}">
               {{ trans('texts.download') }} (.{{ $file->type }})
             </a>
           @endforeach

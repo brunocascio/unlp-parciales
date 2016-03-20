@@ -12,6 +12,13 @@ label {
   width: 90%;
 }
 
+.center-vertical {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: 0;
+  right: 0;
+}
+
 .text-overflow {
   width: 99%;
   text-overflow: ellipsis;
@@ -144,8 +151,3 @@ label {
   height: 70px;
   font-size: 3em;
 }
-
-/*
-* Resource Create
-*
-*/

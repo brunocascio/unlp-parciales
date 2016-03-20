@@ -18,6 +18,7 @@ return [
   'upload' => 'Subir',
   'upload_resource' => 'Subir Recurso',
   'back' => 'Atrás',
+  'show' => 'Ver',
   'courses' => 'Materias',
   'course' => 'Materia',
   'teachers' => 'Docentes',

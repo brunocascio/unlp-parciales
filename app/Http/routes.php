@@ -15,6 +15,7 @@
 Route::pattern('id', '[0-9]+');
 Route::pattern('career_slug', '[a-z\-]+');
 Route::pattern('course_slug', '[0-9a-z\-]+');
+Route::pattern('resource_slug', '[0-9a-z\-]+');
 Route::pattern('type_slug', '[a-z\-]+');
 
 /*
@@ -224,6 +225,15 @@ Route::group(['middleware' => ['web']], function () {
         '/courses/{course_slug}/resources/{type_slug?}',
         'CourseResourceController@index'
       );
+
+      /*
+      * Show resource
+      *
+      */
+      Route::get('/resources/{resource_slug}', [
+        'as' => 'resources.show', 
+        'uses' => 'ResourceController@show'
+      ]);
 
       /*
       * Resources
