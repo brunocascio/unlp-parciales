@@ -72,7 +72,7 @@ class Unx extends Command
         // Update admin password
         UnxUser::find(1)->update([
           'email' => $admin_email,
-          'password' => bcrypt($admin_password)
+          'password' => $admin_password
         ]);
 
         $this->call('optimize');
