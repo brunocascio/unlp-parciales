@@ -3,9 +3,9 @@
 @section('main')
   <table class="table table-striped table-bordered table-condensed">
     <thead>
-      <th>Key</th>
-      <th>Value</th>
-      <th>Actions</th>
+      <th>{{ trans('texts.key') }}</th>
+      <th>{{ trans('texts.value') }}</th>
+      <th></th>
     </thead>
     <tbody>
       @foreach ($configs as $config)

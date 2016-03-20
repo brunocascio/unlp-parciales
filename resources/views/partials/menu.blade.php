@@ -24,10 +24,10 @@
 
       <ul class="nav navbar-nav navbar-left">
         @if (Auth::guest())
-          <li><a href="{{ url('/login') }}">Login</a></li>
+          <li><a href="{{ url('/login') }}">{{ trans('texts.login') }}</a></li>
         @else
           @if ( isModerator() )
-            <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('admin.dashboard') }}">{{ trans('texts.dashboard') }}</a></li>
           @endif
         @endif
       </ul>
@@ -41,7 +41,7 @@
               {{ ucfirst(Auth::user()->name) }} <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+              <li><a href="{{ url('/logout') }}">{{ trans('texts.logout') }}</a></li>
             </ul>
           </li>
         @endif
@@ -51,14 +51,14 @@
               role="button"
               data-href="{{ route('resources.create') }}"
               class="btn btn-sm btn-success navbar-btn">
-                Upload Resource
+                {{ trans('texts.upload_resource') }}
             </button>
           @else
             <button
               role="button"
               data-href="{{ route('home') }}"
               class="btn btn-sm btn-danger navbar-btn">
-                Back
+                {{ trans('texts.back') }}
             </button>
           @endif
         </li>

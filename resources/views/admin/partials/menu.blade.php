@@ -4,7 +4,7 @@
       <a class="" role="button" data-toggle="collapse" href="#menu-resources" aria-expanded="true" aria-controls="menu-resources">
         <h4 class="panel-title clearfix">
           <div class="pull-left">
-            Resources
+            {{ trans('texts.resources') }}
           </div>
           <div class="pull-right">
             <span class="label label-danger">{{ totalResourcesUnpublisheds() }}</span>
@@ -17,10 +17,10 @@
       <ul class="list-group">
         @if ( isModerator() )
           <li class="list-group-item">
-            <a href="{{ route('admin.resources.index') }}">All</a>
+            <a href="{{ route('admin.resources.index') }}">{{ trans('texts.all') }}</a>
           </li>
           <li class="list-group-item">
-            <a href="{{ route('admin.resources.unpublisheds') }}">Unpublisheds</a>
+            <a href="{{ route('admin.resources.unpublisheds') }}">{{ trans('texts.resource.unpublisheds') }}</a>
           </li>
         @endif
       </ul>
@@ -32,7 +32,7 @@
         <a class="" role="button" data-toggle="collapse" href="#menu-types" aria-expanded="true" aria-controls="menu-types">
           <h4 class="panel-title clearfix">
             <div class="pull-left">
-              Types
+              {{ trans('texts.resource.types') }}
             </div>
             <div class="pull-right">
               <span class="label label-default">{{ totalTypes() }}</span>
@@ -43,10 +43,10 @@
       <div id="menu-types" class="panel-collapse {{ !Route::is('admin.types.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingTypes" aria-expanded="true">
         <ul class="list-group">
           <li class="list-group-item">
-            <a href="{{ route('admin.types.index') }}">All</a>
+            <a href="{{ route('admin.types.index') }}">{{ trans('texts.all') }}</a>
           </li>
           <li class="list-group-item">
-            <a href="{{ route('admin.types.create') }}">New</a>
+            <a href="{{ route('admin.types.create') }}">{{ trans('texts.new') }}</a>
           </li>
         </ul>
       </div>
@@ -56,7 +56,7 @@
         <a class="" role="button" data-toggle="collapse" href="#menu-users" aria-expanded="true" aria-controls="menu-users">
           <h4 class="panel-title clearfix">
             <div class="pull-left">
-              Users
+              {{ trans('texts.users') }}
             </div>
             <div class="pull-right">
               <span class="label label-default">{{ totalUsers() }}</span>
@@ -67,10 +67,10 @@
       <div id="menu-users" class="panel-collapse {{ !Route::is('admin.users.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingUsers" aria-expanded="true">
         <ul class="list-group">
           <li class="list-group-item">
-            <a href="{{ route('admin.users.index') }}">All</a>
+            <a href="{{ route('admin.users.index') }}">{{ trans('texts.all') }}</a>
           </li>
           <li class="list-group-item">
-            <a href="{{ route('admin.users.create') }}">New</a>
+            <a href="{{ route('admin.users.create') }}">{{ trans('texts.new') }}</a>
           </li>
         </ul>
       </div>
@@ -80,7 +80,7 @@
         <a class="" role="button" data-toggle="collapse" href="#menu-careers" aria-expanded="true" aria-controls="menu-careers">
           <h4 class="panel-title clearfix">
             <div class="pull-left">
-              Careers
+              {{ trans('texts.careers') }}
             </div>
             <div class="pull-right">
               <span class="label label-default">{{ totalCareers() }}</span>
@@ -91,10 +91,10 @@
       <div id="menu-careers" class="panel-collapse {{ !Route::is('admin.careers.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingCareers" aria-expanded="true">
         <ul class="list-group">
           <li class="list-group-item">
-            <a href="{{ route('admin.careers.index') }}">All</a>
+            <a href="{{ route('admin.careers.index') }}">{{ trans('texts.all') }}</a>
           </li>
           <li class="list-group-item">
-            <a href="{{ route('admin.careers.create') }}">New</a>
+            <a href="{{ route('admin.careers.create') }}">{{ trans('texts.new') }}</a>
           </li>
         </ul>
       </div>
@@ -104,7 +104,7 @@
         <a class="" role="button" data-toggle="collapse" href="#menu-courses" aria-expanded="true" aria-controls="menu-courses">
           <h4 class="panel-title clearfix">
             <div class="pull-left">
-              Courses
+              {{ trans('texts.courses') }}
             </div>
             <div class="pull-right">
               <span class="label label-default">{{ totalCourses() }}</span>
@@ -115,10 +115,10 @@
       <div id="menu-courses" class="panel-collapse {{ !Route::is('admin.courses.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingCourses" aria-expanded="true">
         <ul class="list-group">
           <li class="list-group-item">
-            <a href="{{ route('admin.courses.index') }}">All</a>
+            <a href="{{ route('admin.courses.index') }}">{{ trans('texts.all') }}</a>
           </li>
           <li class="list-group-item">
-            <a href="{{ route('admin.courses.create') }}">New</a>
+            <a href="{{ route('admin.courses.create') }}">{{ trans('texts.new') }}</a>
           </li>
         </ul>
       </div>
@@ -128,7 +128,7 @@
         <a class="" role="button" data-toggle="collapse" href="#menu-teachers" aria-expanded="true" aria-controls="menu-teachers">
           <h4 class="panel-title clearfix">
             <div class="pull-left">
-              Teachers
+              {{ trans('texts.teachers') }}
             </div>
             <div class="pull-right">
               <span class="label label-default">{{ totalTeachers() }}</span>
@@ -139,10 +139,10 @@
       <div id="menu-teachers" class="panel-collapse {{ !Route::is('admin.teachers.*') ? 'collapse' : '' }}" role="tabpanel" aria-labelledby="menuHeadingTeachers" aria-expanded="true">
         <ul class="list-group">
           <li class="list-group-item">
-            <a href="{{ route('admin.teachers.index') }}">All</a>
+            <a href="{{ route('admin.teachers.index') }}">{{ trans('texts.all') }}</a>
           </li>
           <li class="list-group-item">
-            <a href="{{ route('admin.teachers.create') }}">New</a>
+            <a href="{{ route('admin.teachers.create') }}">{{ trans('texts.new') }}</a>
           </li>
         </ul>
       </div>
@@ -151,7 +151,7 @@
       <div class="panel-heading">
         <a role="button" href="{{ route('admin.configs.index') }}">
           <h4 class="panel-title">
-            Settings
+            {{ trans('texts.settings') }}
           </h4>
         </a>
       </div>

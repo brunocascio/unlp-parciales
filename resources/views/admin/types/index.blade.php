@@ -3,8 +3,8 @@
 @section('main')
   <table class="table table-striped table-bordered table-condensed">
     <thead>
-      <th>Name</th>
-      <th>Actions</th>
+      <th>{{ trans('texts.name') }}</th>
+      <th></th>
     </thead>
     <tbody>
       @foreach ($types as $type)

@@ -3,10 +3,10 @@
 @section('main')
   <table class="table table-striped table-bordered table-condensed">
     <thead>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th>Actions</th>
+      <th>{{ trans('texts.name') }}</th>
+      <th>{{ trans('texts.email') }}</th>
+      <th>{{ trans('texts.role') }}</th>
+      <th></th>
     </thead>
     <tbody>
       @foreach ($users as $user)

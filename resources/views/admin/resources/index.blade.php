@@ -3,10 +3,10 @@
 @section('main')
   <table class="table table-striped table-bordered table-condensed">
     <thead>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Active?</th>
-      <th>Actions</th>
+      <th>{{ trans('texts.name') }}</th>
+      <th>{{ trans('texts.type.name') }}</th>
+      <th>{{ trans('texts.active') }}?</th>
+      <th></th>
     </thead>
     <tbody>
       @foreach ($resources as $resource)
@@ -23,7 +23,7 @@
               <input type="hidden" name="_method" value="PUT">
               <button type="submit" class="btn btn-sm {{ $resource->published ? 'btn-danger' : 'btn-info' }}">
                 <i class="glyphicon {{ $resource->published ? 'glyphicon-ban-circle' : 'glyphicon-ok-circle' }}"></i>
-                <span>{{ ! $resource->published ? 'Publish' : 'Unpublish'}}</span>
+                <span>{{ !$resource->published ? trans('texts.resource.publish') : trans('texts.resource.unpublish') }}</span>
               </button>
             </form>
           </td>
