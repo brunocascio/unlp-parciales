@@ -13,4 +13,8 @@ class File extends Model
   public function resource() {
     return $this->belongsTo('App\Resource');
   }
+
+  public function fullname() {
+    return "{$this->name}.{$this->type}";
+  }
 }
