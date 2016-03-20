@@ -204,33 +204,41 @@ Route::group(['middleware' => ['web']], function () {
     */
 
     /*
-    * Home (Root)
+    * Maintenance
     *
     */
-    Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+    Route::get('/maintenance', ['as' => 'maintenance', 'uses' => 'HomeController@maintenance']);
 
-    /*
-    * Results of search
-    *
-    */
-    Route::get(
-      '/courses/{course_slug}/resources/{type_slug?}',
-      'CourseResourceController@index'
-    );
+    Route::group(['middleware' => 'maintenance'], function() {
+      /*
+      * Home (Root)
+      *
+      */
+      Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-    /*
-    * Resources
-    *
-    */
-    Route::resource('resources', 'ResourceController', [
-      'only' => ['create', 'store']
-    ]);
+      /*
+      * Results of search
+      *
+      */
+      Route::get(
+        '/courses/{course_slug}/resources/{type_slug?}',
+        'CourseResourceController@index'
+      );
 
-    /*
-    * Files
-    *
-    */
-    Route::controller('files', 'FileController', [
-      'getDownloadFile' => 'files.download',
-    ]);
+      /*
+      * Resources
+      *
+      */
+      Route::resource('resources', 'ResourceController', [
+        'only' => ['create', 'store']
+      ]);
+
+      /*
+      * Files
+      *
+      */
+      Route::controller('files', 'FileController', [
+        'getDownloadFile' => 'files.download',
+      ]);
+    });
 });
