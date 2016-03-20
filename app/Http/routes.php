@@ -230,7 +230,7 @@ Route::group(['middleware' => ['web']], function () {
       * Show resource
       *
       */
-      Route::get('/resources/{resource_slug}', [
+      Route::get('/resource/{resource_slug}', [
         'as' => 'resources.show',
         'uses' => 'ResourceController@show'
       ]);
