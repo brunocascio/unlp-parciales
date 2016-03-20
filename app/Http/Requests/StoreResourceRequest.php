@@ -28,7 +28,7 @@ class StoreResourceRequest extends Request
     return [
       "name" => "required|min:4|max:100",
       "resource_date" => "required|date|after:{$this->after()}|before:{$this->before()}",
-      "number" => "max:50",
+      "number" => "numeric|max:10",
       "course_id" => "required|exists:courses,id",
       "teacher_id" => "exists:teachers,id",
       "type_id" => "required|exists:types,id",
