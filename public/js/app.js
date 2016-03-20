@@ -1,17 +1,6 @@
 jQuery(function($){
 
   /*
-  * Initializers
-  *
-  */
-  $('[type="file"]').fileinput({
-    showUpload: false,
-    maxFileSize: 10000,
-    minFileCount: 1,
-    maxFileCount: 1,
-  }).fileinput('refresh');
-
-  /*
   * Extends
   *
   */

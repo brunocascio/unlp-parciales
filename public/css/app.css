@@ -8,6 +8,17 @@ label {
   font-weight: 500;
 }
 
+.width-90 {
+  width: 90%;
+}
+
+.text-overflow {
+  width: 99%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .icon-text > * {
   font-size: 12px;
   line-height: 12px;
