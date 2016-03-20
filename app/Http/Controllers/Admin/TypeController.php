@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Career;
 
-class AdminCareerController extends AdminController
+use App\Type;
+use App\Http\Requests\StoreTypeFormRequest;
+
+class TypeController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,7 @@ class AdminCareerController extends AdminController
      */
     public function index()
     {
-        return view('admin.careers.index', [ 'careers' => Career::all() ]);
+        return view('admin.types.index', [ 'types' => Type::all() ]);
     }
 
     /**
@@ -25,24 +27,22 @@ class AdminCareerController extends AdminController
      */
     public function create()
     {
-        return view('admin.careers.create');
+        return view('admin.types.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreTypeFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTypeFormRequest $request)
     {
-      $this->validate($request, Career::getRules());
-
-      Career::create($request->all());
+      $type = Type::create($request->all());
 
       return redirect()
-              ->route('admin.careers.index')
-              ->with('success', 'Save Successfully');
+        ->route('admin.types.index')
+        ->with('success', 'Save Successfully');
     }
 
     /**
@@ -53,7 +53,7 @@ class AdminCareerController extends AdminController
      */
     public function show($id)
     {
-        // ..
+        //
     }
 
     /**
@@ -64,29 +64,27 @@ class AdminCareerController extends AdminController
      */
     public function edit($id)
     {
-      $career = Career::findOrFail($id);
+      $type = Type::findOrFail($id);
 
-      return view('admin.careers.edit')->with('career', $career);
+      return view('admin.types.edit')->with('type', $type);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreTypeFormRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreTypeFormRequest $request, $id)
     {
-      $career = Career::findOrFail($id);
+      $type = Type::findOrFail($id);
 
-      $this->validate($request, Career::getRules($id));
-
-      $career->update($request->all());
+      $type->update($request->all());
 
       return redirect()
-              ->route('admin.careers.index')
-              ->with('success', 'Updated Successfully');
+        ->route('admin.types.index')
+        ->with('success', 'Updated Successfully');
     }
 
     /**
@@ -97,10 +95,10 @@ class AdminCareerController extends AdminController
      */
     public function destroy($id)
     {
-      Career::destroy($id);
+      Type::destroy($id);
 
       return redirect()
-              ->route('admin.careers.index')
-              ->with('success', 'Deleted Successfully');
+        ->route('admin.types.index')
+        ->with('success', 'Deleted Successfully');
     }
 }

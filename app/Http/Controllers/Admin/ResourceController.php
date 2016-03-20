@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -13,7 +14,7 @@ use App\Course;
 use App\Teacher;
 use App\Type;
 
-class AdminResourceController extends AdminController
+class ResourceController extends AdminController
 {
   /**
   * Display a listing of the resource.

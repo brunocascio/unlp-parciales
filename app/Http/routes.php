@@ -90,7 +90,7 @@ Route::group(['middleware' => ['web']], function () {
         */
         Route::get('/', [
           'as' => 'admin.dashboard',
-          'uses' => 'AdminController@index'
+          'uses' => 'Admin\AdminController@index'
         ]);
 
         /*
@@ -100,32 +100,32 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'resources'], function()
         {
           Route::get('/', [
-            'uses' => 'AdminResourceController@index',
+            'uses' => 'Admin\ResourceController@index',
             'as' => 'admin.resources.index'
           ]);
 
           Route::get('/unpublisheds', [
-            'uses' => 'AdminResourceController@unpublisheds',
+            'uses' => 'Admin\ResourceController@unpublisheds',
             'as' => 'admin.resources.unpublisheds'
           ]);
 
           Route::put('/{id}/publish', [
-            'uses' => 'AdminResourceController@publish',
+            'uses' => 'Admin\ResourceController@publish',
             'as' => 'admin.resources.publish'
           ]);
 
           Route::put('/{id}/unpublish', [
-            'uses' => 'AdminResourceController@unpublish',
+            'uses' => 'Admin\ResourceController@unpublish',
             'as' => 'admin.resources.unpublish'
           ]);
 
           Route::get('{id}/edit', [
-            'uses' => 'AdminResourceController@edit',
+            'uses' => 'Admin\ResourceController@edit',
             'as' => 'admin.resources.edit'
           ]);
 
           Route::patch('{id}', [
-            'uses' => 'AdminResourceController@update',
+            'uses' => 'Admin\ResourceController@update',
             'as' => 'admin.resources.update'
           ]);
         });
@@ -143,7 +143,7 @@ Route::group(['middleware' => ['web']], function () {
         * Configs
         *
         */
-        Route::resource('configs', 'AdminConfigController', [
+        Route::resource('configs', 'Admin\ConfigController', [
           'only' => ['index', 'edit', 'update']
         ]);
 
@@ -151,7 +151,7 @@ Route::group(['middleware' => ['web']], function () {
         * Users
         *
         */
-        Route::resource('users', 'AdminUserController', [
+        Route::resource('users', 'Admin\UserController', [
           'except' => 'destroy'
         ]);
 
@@ -159,7 +159,7 @@ Route::group(['middleware' => ['web']], function () {
         * Careers
         *
         */
-        Route::resource('careers', 'AdminCareerController', [
+        Route::resource('careers', 'Admin\CareerController', [
           'except' => 'show'
         ]);
 
@@ -167,7 +167,7 @@ Route::group(['middleware' => ['web']], function () {
         * Courses
         *
         */
-        Route::resource('courses', 'AdminCourseController', [
+        Route::resource('courses', 'Admin\CourseController', [
           'except' => 'show'
         ]);
 
@@ -175,7 +175,7 @@ Route::group(['middleware' => ['web']], function () {
         * Teachers
         *
         */
-        Route::resource('teachers', 'AdminTeacherController', [
+        Route::resource('teachers', 'Admin\TeacherController', [
           'except' => 'show'
         ]);
 
@@ -183,7 +183,7 @@ Route::group(['middleware' => ['web']], function () {
         * Types
         *
         */
-        Route::resource('types', 'AdminTypeController', [
+        Route::resource('types', 'Admin\TypeController', [
           'except' => 'show'
         ]);
 
@@ -191,7 +191,7 @@ Route::group(['middleware' => ['web']], function () {
         * Resources
         *
         */
-        Route::resource('resources', 'AdminResourceController', [
+        Route::resource('resources', 'Admin\ResourceController', [
           'only' => ['destroy']
         ]);
       });
@@ -231,7 +231,7 @@ Route::group(['middleware' => ['web']], function () {
       *
       */
       Route::get('/resources/{resource_slug}', [
-        'as' => 'resources.show', 
+        'as' => 'resources.show',
         'uses' => 'ResourceController@show'
       ]);
 

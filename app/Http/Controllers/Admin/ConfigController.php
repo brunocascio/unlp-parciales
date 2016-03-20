@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Requests\UpdateConfigRequest;
 use App\Config;
 
-class AdminConfigController extends AdminController
+class ConfigController extends AdminController
 {
 
   /**

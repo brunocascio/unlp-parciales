@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Teacher;
 use App\Http\Requests\StoreTeacherFormRequest;
 
-class AdminTeacherController extends Controller
+class TeacherController extends AdminController
 {
     /**
      * Display a listing of the resource.
