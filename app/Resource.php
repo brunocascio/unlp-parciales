@@ -7,6 +7,8 @@ use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 
 use App\Type;
+use Carbon\Carbon;
+use App\Scopes\OrderIdDescScope;
 
 class Resource extends Model implements SluggableInterface
 {
@@ -15,6 +17,22 @@ class Resource extends Model implements SluggableInterface
   protected $guarded = [ 'approved_by', 'published', 'file' ];
 
   protected $sluggable = [ 'build_from' => 'name', 'save_to' => 'slug' ];
+
+  /**
+   * The "booting" method of the model.
+   *
+   * @return void
+   */
+  protected static function boot()
+  {
+      parent::boot();
+      // Add Global Scope for ordering by id DESC.
+      static::addGlobalScope(new OrderIdDescScope);
+  }
+
+  public function resource_date_formated() {
+    return Carbon::parse($this->resource_date)->format('d/m/Y');
+  }
 
   public function course() {
     return $this->belongsTo('App\Course');
