@@ -1,6 +1,7 @@
 /docker
 /vendor
 /node_modules
+/storage/**/*
 /public/storage
 /public/files
 Homestead.yaml

@@ -1,4 +1,8 @@
-# unXParciales
+# UNLPParciales
+
+# Requerimientos
+
+Requiere los requerimientos de [Laravel 5.2](https://laravel.com/docs/5.2#server-requirements) a excepción de que es necesario `PHP >= 5.6`
 
 **Branches:**
   * Master: Producción
@@ -8,7 +12,7 @@
 
 Clonamos el repo
 
-`mkdir unxparciales && cd $_ && git clone https://github.com/unXtests/web .`
+`git clone https://github.com/brunocasico/unlp-parciales && cd unlp-parciales`
 
 Instalamos dependencias
 
