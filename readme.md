@@ -18,19 +18,16 @@ Configuramos variables de entorno:
 
 `mv .env.example .env && vim .env`
 
-Generamos una app key. (ésto es para encriptación)
+Instalamos la Instancia
 
-`php artisan key:generate`
+`php artisan unx:install`
 
-Ejecutamos el servidor
+Para ejcutar el servidor de desarrollo local ejecutamos
 
 `php artisan serve`
 
 
-### Laravel PHP Framework
+### Laravel PHP Framework Info
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
