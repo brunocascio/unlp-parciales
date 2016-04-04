@@ -159,7 +159,6 @@ return [
         /*
          *  Plugins
          */
-        browner12\helpers\HelperServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
     ],
 
