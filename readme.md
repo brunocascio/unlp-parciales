@@ -2,7 +2,7 @@
 
 # Requerimientos
 
-Requiere los requerimientos de [Laravel 5.2](https://laravel.com/docs/5.2#server-requirements) a excepción de que es necesario `PHP >= 5.6`
+Requiere los requerimientos de [Laravel 5.2](https://laravel.com/docs/5.2#server-requirements)
 
 **Branches:**
   * Master: Producción
