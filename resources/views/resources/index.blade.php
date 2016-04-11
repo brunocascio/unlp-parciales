@@ -25,7 +25,7 @@
             <span>{{ $resource->resource_date_formated() }}</span>
           </div>
           <div class="text-overflow">
-            <strong>{{ trans('texts.resource.type') }}:</strong>
+            <strong>{{ trans('texts.resource.number.text') }}:</strong>
             <span>{{ $resource->number ? $resource->number : '-' }}</span>
           </div>
           <div>

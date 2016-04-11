@@ -55,7 +55,7 @@ return [
     'type' => 'Resource Type',
     'number' => [
       'text' => 'Número de Mesa/Fecha',
-      'placeholder' => 'E.g 1er Fecha ó 1era Mesa',
+      'placeholder' => '(Numeric)',
     ],
   ],
   'type' => [
