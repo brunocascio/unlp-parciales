@@ -1,5 +1,8 @@
 # unXParciales
 
+Aplicación usada en:
+ * [UNLPParciales](https://github.com/brunocascio/unlp-parciales)
+
 **Branches:**
   * Master: Producción
   * Develop: Desarrollo
