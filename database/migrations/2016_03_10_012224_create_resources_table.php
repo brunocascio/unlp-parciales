@@ -37,7 +37,8 @@ class CreateResourcesTable extends Migration
 
       $table->foreign('teacher_id')
       ->references('id')
-      ->on('teachers');
+      ->on('teachers')
+      ->onDelete('set null');
 
       $table->foreign('type_id')
       ->references('id')
