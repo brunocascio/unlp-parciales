@@ -51,9 +51,16 @@ class ResourceController extends Controller
   */
   public function store(StoreResourceRequest $request)
   {
-    DB::transaction(function() use ($request)
+
+    $data = $request->input();
+
+    if ( empty($data['teacher_id']) ) {
+      $data['teacher_id'] = null;
+    }
+
+    DB::transaction(function() use ($request, $data)
     {
-      $resource = Resource::create($request->all());
+      $resource = Resource::create($data);
       $uploadedFile = $request->file('file');
 
       $type = $uploadedFile->getClientOriginalExtension();

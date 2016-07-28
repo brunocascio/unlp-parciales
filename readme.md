@@ -4,6 +4,9 @@
 
 Requiere los requerimientos de [Laravel 5.2](https://laravel.com/docs/5.2#server-requirements)
 
+Aplicación usada en:
+ * [UNLPParciales](https://github.com/brunocascio/unlp-parciales)
+
 **Branches:**
   * Master: Producción
   * Develop: Desarrollo

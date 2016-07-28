@@ -99,7 +99,13 @@ class ResourceController extends AdminController
   */
   public function update(UpdateResourceRequest $request, $id)
   {
-    Resource::findOrFail($id)->update($request->except(['file']));
+    $data = $request->input();
+
+    if ( empty($data['teacher_id']) ) {
+      $data['teacher_id'] = null;
+    }
+
+    Resource::findOrFail($id)->update($data);
 
     return redirect()
     ->route('admin.resources.index')
