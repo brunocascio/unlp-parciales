@@ -16,7 +16,7 @@ class Course extends Model implements SluggableInterface
 
     protected $fillable = [ 'name' ];
 
-    protected $sluggable = [ 'build_from' => 'name', 'save_to'    => 'slug' ];
+    protected $sluggable = [ 'build_from' => 'name', 'save_to' => 'slug' ];
 
     public function careers() {
       return $this->belongsToMany('App\Career', 'careers_courses');

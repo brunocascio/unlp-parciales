@@ -25,7 +25,7 @@ class StoreCourseFormRequest extends Request
   {
     return [
       'name' => "required|unique:courses,name,{$this->courses}|min:4|max:100",
-      'careers.*.id' => 'required|distinct|exists:careers,id'
+      'careers' => 'required|array|distinct|min:1|exists:careers,id'
     ];
   }
 }
