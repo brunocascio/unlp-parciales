@@ -15,7 +15,7 @@
       <div class="panel-body">
         <div class="text-overflow">
           <strong>{{ trans('texts.teacher.name') }}:</strong>
-          <span>{{ $resource->teacher->name or '-' }}</span>
+          <span>{{ $resource->teacher ? $resource->teacher->name : '-' }}</span>
         </div>
         <div class="text-overflow">
           <strong>{{ trans('texts.date') }}:</strong>
