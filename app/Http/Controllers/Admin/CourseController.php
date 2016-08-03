@@ -36,7 +36,7 @@ class CourseController extends AdminController
   */
   public function store(StoreCourseFormRequest $request)
   {
-    $course = Course::create($request->all());
+    $course = Course::create($request->input());
 
     $course->careers()->attach($request->get('careers'));
 
