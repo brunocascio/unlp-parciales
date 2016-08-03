@@ -37,6 +37,7 @@ return [
   'value' => 'Valor',
   'date' => 'Fecha',
   'download' => 'Descargar',
+  'downloads' => 'Descargas',
   'new' => 'Nuevo',
   'save' => 'Guardar',
   'name' => 'Nombre',
