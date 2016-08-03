@@ -13,7 +13,7 @@
 
 // Route patterns
 Route::pattern('id', '[0-9]+');
-Route::pattern('career_slug', '[a-z\-]+');
+Route::pattern('career_slug', '[0-9a-z\-]+');
 Route::pattern('course_slug', '[0-9a-z\-]+');
 Route::pattern('resource_slug', '[0-9a-z\-]+');
 Route::pattern('type_slug', '[a-z\-]+');
