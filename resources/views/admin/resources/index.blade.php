@@ -5,6 +5,7 @@
     <thead>
       <th>{{ trans('texts.name') }}</th>
       <th>{{ trans('texts.type.name') }}</th>
+      <th>{{ trans('texts.downloads') }}</th>
       <th>{{ trans('texts.active') }}?</th>
       <th></th>
     </thead>
@@ -13,6 +14,7 @@
         <tr>
           <td>{{ $resource->name }}</td>
           <td>{{ $resource->type->name }}</td>
+          <td>{{ $resource->downloads_count }}</td>
           <td>
             @if (!$resource->published)
             <form class="form-inline" action="{{ route('admin.resources.publish', [$resource->id]) }}" method="POST">
