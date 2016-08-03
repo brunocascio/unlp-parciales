@@ -57,7 +57,11 @@
       <label for="teachers_id">{{ trans('texts.teacher.name') }} ({{ trans('texts.optional') }})</label>
       <select class="form-control selectpicker" name="teacher_id" data-live-search="true">
         <option></option>
-        <?php $teacher_id = (isset($resource) && isset($resource->teacher)) ? $resource->teacher->id : old('teacher_id'); ?>
+        <?php if ( !empty($resource) && $resource->teacher ): ?>
+          <?php $teacher_id = $resource->teacher->id; ?>
+        <?php else: ?>
+          <?php $teacher_id = old('teacher_id'); ?>
+        <?php endif ?>
         @foreach($teachers as $teacher)
           <option
             value="{{$teacher->id}}"
