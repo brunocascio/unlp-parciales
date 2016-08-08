@@ -11,9 +11,9 @@ class Config extends Model
     protected $fillable = ['value'];
 
     public static function googleAnalitycsCode() {
-      $gcode = self::where('key', 'google-analitycs');
+      $gcode = self::where('key', 'google-analitycs')->first();
       return $gcode
-        ? $gcode->first()->value
+        ? $gcode->value
         : '';
     }
 
