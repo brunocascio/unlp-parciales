@@ -78,15 +78,34 @@ label {
   border-color: #29abe0;
 }
 
+.bootstrap-select.btn-group .dropdown-menu.open {
+  z-index: 9999;
+}
+
+.bootstrap-select.btn-group .dropdown-menu.inner {
+  max-width: 220px;
+}
+
 .bootstrap-select.btn-group .dropdown-toggle .filter-option,
 .bootstrap-select.btn-group .dropdown-menu li a span.text,
 .bootstrap-select .caret {
   color: #3e3f3a;
 }
 
+.bootstrap-select.btn-group .dropdown-menu li a span.text {
+  width: 99%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .form-group {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.file-input.has-error .file-preview {
+  display: none;
 }
 
 /*
@@ -140,7 +159,9 @@ label {
 
 .natural-language-container .bootstrap-select .dropdown-toggle .filter-option {
   font-size: 3rem;
-  overflow: visible !important;
+  text-overflow: ellipsis;
+  width: 95%;
+  overflow: hidden!important;
 }
 
 .natural-language-container .bootstrap-select>.dropdown-toggle {
