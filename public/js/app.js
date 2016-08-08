@@ -58,7 +58,7 @@ jQuery(function($){
   window.noResultsSelectMessage = function(id) {
     $("[data-id='"+id+"']")
       .find('.filter-option')
-      .html('No Results');
+      .html('No hay Resultados... :(');
   }
 
   /*
@@ -134,6 +134,7 @@ jQuery(function($){
   * Helpers
   *
   */
+
   $('.delete').click(function(e){
     var r = confirm("Desea borrar el recurso?");
     return r;
@@ -147,4 +148,37 @@ jQuery(function($){
     $($(this).data('enable')).prop('disabled', false);
   });
 
+  $('button[data-toggle="button"]').on('click', function() {
+    var $btn = $(this).button('loading');
+  });
+
+  $('button[type="submit"]').on('click', function() {
+    $(this).closest('form').submit();
+  });
+
+  if ( window.jQuery && window.jQuery.validator )
+  {
+    jQuery.validator.setDefaults({
+      highlight: function(element) {
+        $(element).closest('.form-group').addClass('has-error');
+      },
+      errorElement: 'span',
+      errorClass: 'help-block',
+      errorPlacement: function(error, element) {
+        var isCheckbox = (element.prop('type') === 'checkbox');
+        var isRadop = (element.prop('type') === 'radio');
+        $(element).closest('.form-group').append(error);
+      }
+    });
+
+    $('.form.validate').validate({
+      invalidHandler: function() {
+        $('button[type="submit"]').button('reset').button('toggle');
+      },
+      submitHandler: function(form) {
+        $('#loading').showLoading();
+        form.submit();
+      }
+    });
+  }
 });

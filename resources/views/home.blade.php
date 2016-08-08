@@ -41,7 +41,15 @@
     </div>
     <div class="panel-footer">
       <div class="text-center section clearfix">
-        <button id="search" type="button" class="btn btn-block btn-info disabled">{{ trans('texts.search_resources') }}</button>
+        <button
+          id="search"
+          type="button"
+          class="btn btn-block btn-info disabled"
+          data-loading-text="Buscando..."
+          data-toggle="button"
+          autocomplete="off">
+          {{ trans('texts.search_resources') }}
+        </button>
       </div>
     </div>
   </section>
