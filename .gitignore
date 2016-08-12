@@ -8,6 +8,7 @@ Homestead.yaml
 Homestead.json
 .env
 composer.lock
+composer.phar
 tests/files
 tests/data-parsed.json
 tests/ResourcesTest.php

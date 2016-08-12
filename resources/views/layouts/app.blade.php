@@ -13,9 +13,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.3.1/css/fileinput.min.css" rel="stylesheet">
     @section('stylesheets_default')
-      <link href="{{ asset('css/loader.css') }}" rel="stylesheet">
-      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-      <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+      <link href="{{ secure_asset('css/loader.css') }}" rel="stylesheet">
+      <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+      <link href="{{ secure_asset('css/responsive.css') }}" rel="stylesheet">
     @show
     @stack('styles')
   </head>
@@ -39,7 +39,7 @@
       <script type="text/javascript">
         $('.selectpicker').attr('title', "{{trans('texts.select')}}");
       </script>
-      <script src="{{ asset('js/app.js') }}"></script>
+      <script src="{{ secure_asset('js/app.js') }}"></script>
     @show
 
     @stack('scripts')
