@@ -11,6 +11,11 @@
 |
 */
 
+if ( App::environment('production') && env('APP_HTTPS') ) {
+  URL::forceSchema('https');
+}
+
+
 // Route patterns
 Route::pattern('id', '[0-9]+');
 Route::pattern('career_slug', '[0-9a-z\-]+');
